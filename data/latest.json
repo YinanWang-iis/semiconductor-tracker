@@ -44,7 +44,82 @@
         "主要云厂商订单是否提前或延后？",
         "板卡交期是否变化？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "hbm",
@@ -89,7 +164,82 @@
         "先进封装产能是否匹配？",
         "客户预付款或长期合约变化？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "cowos",
@@ -133,7 +283,82 @@
         "载板和中介层是否短缺？",
         "客户排产优先级是否变化？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "optical",
@@ -177,7 +402,82 @@
         "硅光方案是否放量？",
         "大客户资本开支是否上修？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "nand",
@@ -222,7 +522,82 @@
         "企业级SSD报价是否强于消费级？",
         "渠道库存周数是否下降？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "dram",
@@ -267,7 +642,82 @@
         "手机库存是否健康？",
         "产能是否从通用DRAM转向HBM？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     },
     {
       "id": "wafer-foundry",
@@ -311,7 +761,443 @@
         "海外晶圆厂进度是否延后？",
         "AI客户是否挤占消费电子产能？"
       ],
-      "evidence": []
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "materials",
+      "stage": "upstream",
+      "product": "硅片、光刻胶、电子气体",
+      "companies": "信越、SUMCO、JSR、TOK、Entegris、华特气体",
+      "regions": [
+        "日本",
+        "美国",
+        "中国大陆",
+        "台湾"
+      ],
+      "priority": "steady",
+      "query": "semiconductor materials silicon wafer photoresist electronic gas price inventory capacity",
+      "signal": "上游材料决定成本和供应安全，价格通常滞后于晶圆厂稼动率。",
+      "metrics": {
+        "price": {
+          "value": "98-105",
+          "unit": "材料指数",
+          "change": "+1% QoQ",
+          "trend": "flat",
+          "note": "以2025年均值=100估算，上游价格通常滞后。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "10-16",
+          "unit": "周",
+          "change": "持平",
+          "trend": "flat",
+          "note": "关键材料安全库存一般高于下游成品。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "3-8",
+          "unit": "% YoY",
+          "change": "+5% YoY",
+          "trend": "up",
+          "note": "长期扩产为主，短期弹性较低。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "晶圆厂稼动率是否回升？",
+        "关键材料是否国产替代？",
+        "出口管制是否影响供应？"
+      ],
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "equipment",
+      "stage": "upstream",
+      "product": "半导体设备",
+      "companies": "ASML、Applied Materials、Lam Research、TEL、北方华创",
+      "regions": [
+        "美国",
+        "日本",
+        "中国大陆",
+        "欧洲",
+        "台湾"
+      ],
+      "priority": "watch",
+      "query": "semiconductor equipment WFE ASML Applied Materials Lam Research TEL capex lead time export control",
+      "signal": "资本开支和出口管制直接影响未来产能开出。",
+      "metrics": {
+        "price": {
+          "value": "100-108",
+          "unit": "设备价指数",
+          "change": "+2% QoQ",
+          "trend": "up",
+          "note": "高端设备价格刚性较强，更多看订单和交期。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "6-12",
+          "unit": "月交期",
+          "change": "-1月 QoQ",
+          "trend": "down",
+          "note": "以交付周期替代库存观察，交期缩短代表供给缓解。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "$95-110B",
+          "unit": "全球WFE",
+          "change": "+8% YoY",
+          "trend": "up",
+          "note": "晶圆制造设备支出区间估算，反映未来产能投放。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "晶圆厂资本开支是否上修？",
+        "关键设备交期是否缩短？",
+        "管制清单是否变化？"
+      ],
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "smartphone",
+      "stage": "demand",
+      "product": "手机与PC需求",
+      "companies": "Apple、联想、Dell、HP、华为、小米",
+      "regions": [
+        "美国",
+        "中国大陆",
+        "台湾",
+        "日本"
+      ],
+      "priority": "steady",
+      "query": "smartphone PC demand inventory AI PC memory content shipments",
+      "signal": "消费电子决定通用DRAM/NAND和成熟制程复苏力度。",
+      "metrics": {
+        "price": {
+          "value": "0-3",
+          "unit": "%BOM压力",
+          "change": "+1pct QoQ",
+          "trend": "flat",
+          "note": "整机端对存储涨价的成本压力估算。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "6-9",
+          "unit": "周",
+          "change": "-1周 QoQ",
+          "trend": "down",
+          "note": "整机与渠道库存周数估算，接近正常区间。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "0-5",
+          "unit": "%出货YoY",
+          "change": "+3% YoY",
+          "trend": "up",
+          "note": "手机与PC合计需求增速估算，AI PC需单独观察。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "整机库存是否回到正常？",
+        "AI PC是否带来换机？",
+        "手机存储容量是否提升？"
+      ],
+      "alerts": [
+        {
+          "level": "green",
+          "label": "暂无明显新增",
+          "text": "过去7天公开来源信号较少。"
+        }
+      ],
+      "evidence": [],
+      "history": {
+        "price": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "inventory": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ],
+        "capacity": [
+          {
+            "label": "当前",
+            "value": 0
+          },
+          {
+            "label": "30天前",
+            "value": 0
+          },
+          {
+            "label": "60天前",
+            "value": 0
+          },
+          {
+            "label": "90天前",
+            "value": 0
+          },
+          {
+            "label": "120天前",
+            "value": 0
+          }
+        ]
+      }
     }
   ]
 }

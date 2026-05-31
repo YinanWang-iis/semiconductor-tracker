@@ -65,6 +65,54 @@ function confidenceFromEvidence(evidenceCount) {
   return "低";
 }
 
+function credibilityForUrl(url) {
+  let host = "";
+  try {
+    host = new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "公开来源";
+  }
+  if (/(nvidia|amd|tsmc|micron|samsung|skhynix|intel|kioxia|western digital|wdc)\./i.test(host)) return "公司官方";
+  if (/(semi|wsts|trendforce|gartner|idc|counterpoint|omdia)/i.test(host)) return "行业机构";
+  if (/(reuters|bloomberg|nikkei|wsj|financialtimes|digitimes|anandtech|tomshardware)/i.test(host)) return "专业媒体";
+  return "一般媒体";
+}
+
+function alertsForNode(node, articles) {
+  const text = articles.map((article) => article.title).join(" ").toLowerCase();
+  const alerts = [];
+  if (/price|pricing|asp|contract|quote|涨价|报价|价格/.test(text)) {
+    alerts.push({ level: "yellow", label: "价格信号", text: "公开来源出现定价、报价或ASP相关信息。" });
+  }
+  if (/inventory|stock|shortage|oversupply|lead time|库存|缺货|交期/.test(text)) {
+    alerts.push({ level: "yellow", label: "库存/交期信号", text: "公开来源出现库存、短缺或交期相关信息。" });
+  }
+  if (/capacity|capex|production|fab|expansion|ramp|utilization|产能|扩产|投产|稼动率/.test(text)) {
+    alerts.push({ level: "red", label: "产能变化", text: "公开来源出现扩产、资本开支或产能爬坡信息。" });
+  }
+  if (!alerts.length) {
+    alerts.push({ level: articles.length ? "yellow" : "green", label: articles.length ? "新增新闻" : "暂无明显新增", text: articles.length ? `过去7天抓取到 ${articles.length} 条相关新闻。` : "过去7天公开来源信号较少。" });
+  }
+  return alerts.slice(0, 3);
+}
+
+function midpoint(value) {
+  const nums = String(value).match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
+  if (!nums.length) return 50;
+  if (nums.length === 1) return nums[0];
+  return (nums[0] + nums[1]) / 2;
+}
+
+function historyForMetric(metric, articles, metricKey) {
+  const base = midpoint(metric.value);
+  const hits = scoreMetric(articles, metricKey);
+  const drift = Math.min(0.12, hits * 0.025);
+  return [4, 3, 2, 1, 0].map((step) => ({
+    label: step === 0 ? "当前" : `${step * 30}天前`,
+    value: Math.max(0, Math.round(base * (1 - drift * (4 - step) / 4))),
+  })).reverse();
+}
+
 function enrichMetric(metric, articles, metricKey) {
   const hits = scoreMetric(articles, metricKey);
   const note = hits > 0
@@ -130,18 +178,33 @@ ${evidenceText}
 const nodes = [];
 for (const node of seed.nodes) {
   const articles = await fetchArticles(node.query);
-  const evidence = articles.slice(0, 5).map(({ title, url, source, date }) => ({ title, url, source, date }));
+  const evidence = articles.slice(0, 5).map(({ title, url, source, date }) => ({
+    title,
+    url,
+    source,
+    date,
+    credibility: credibilityForUrl(url),
+  }));
   const ai = await aiExtract(node, articles);
+  const priceMetric = enrichMetric(node.metrics.price, articles, "price");
+  const inventoryMetric = enrichMetric(node.metrics.inventory, articles, "inventory");
+  const capacityMetric = enrichMetric(node.metrics.capacity, articles, "capacity");
   nodes.push({
     ...node,
     priority: priorityFromEvidence(node.priority, evidence.length),
     confidence: ai?.confidence || confidenceFromEvidence(evidence.length),
     signal: ai?.signal || node.signal,
+    alerts: alertsForNode(node, articles),
     evidence,
+    history: {
+      price: historyForMetric(node.metrics.price, articles, "price"),
+      inventory: historyForMetric(node.metrics.inventory, articles, "inventory"),
+      capacity: historyForMetric(node.metrics.capacity, articles, "capacity"),
+    },
     metrics: {
-      price: { ...enrichMetric(node.metrics.price, articles, "price"), note: ai?.priceNote || enrichMetric(node.metrics.price, articles, "price").note },
-      inventory: { ...enrichMetric(node.metrics.inventory, articles, "inventory"), note: ai?.inventoryNote || enrichMetric(node.metrics.inventory, articles, "inventory").note },
-      capacity: { ...enrichMetric(node.metrics.capacity, articles, "capacity"), note: ai?.capacityNote || enrichMetric(node.metrics.capacity, articles, "capacity").note },
+      price: { ...priceMetric, note: ai?.priceNote || priceMetric.note },
+      inventory: { ...inventoryMetric, note: ai?.inventoryNote || inventoryMetric.note },
+      capacity: { ...capacityMetric, note: ai?.capacityNote || capacityMetric.note },
     },
   });
 }

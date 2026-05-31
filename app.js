@@ -177,6 +177,12 @@ let datasetMeta = {
   sourceNote: "模板示例，非实时行情",
 };
 
+let stockData = {
+  updatedAt: "",
+  sourceNote: "等待行情更新",
+  stocks: [],
+};
+
 const statusText = { hot: "高优先级", watch: "观察", steady: "稳定跟踪" };
 const metricNames = { price: "定价", inventory: "库存", capacity: "产能" };
 const trendText = { up: "上行", down: "下行", flat: "持平" };
@@ -187,6 +193,8 @@ const state = {
   region: "all",
   search: "",
   selected: nodes[0].id,
+  pinnedOnly: false,
+  pinned: JSON.parse(localStorage.getItem("semiconductor-pinned-nodes") || "[]"),
 };
 
 const els = {
@@ -199,14 +207,105 @@ const els = {
   resultCount: document.querySelector("#resultCount"),
   nodeCount: document.querySelector("#nodeCount"),
   hotCount: document.querySelector("#hotCount"),
+  alertCount: document.querySelector("#alertCount"),
   dataUpdated: document.querySelector("#dataUpdated"),
   dataSourceNote: document.querySelector("#dataSourceNote"),
   detailTitle: document.querySelector("#detailTitle"),
   detailBody: document.querySelector("#detailBody"),
   watchlistItems: document.querySelector("#watchlistItems"),
+  dailyBriefing: document.querySelector("#dailyBriefing"),
+  briefingBadge: document.querySelector("#briefingBadge"),
+  driverTags: document.querySelector("#driverTags"),
+  alertList: document.querySelector("#alertList"),
+  sourceManagerGrid: document.querySelector("#sourceManagerGrid"),
+  stocksGrid: document.querySelector("#stocksGrid"),
+  stocksUpdated: document.querySelector("#stocksUpdated"),
+  viewTabs: document.querySelectorAll("[data-view-tab]"),
+  viewSections: document.querySelectorAll("[data-view]"),
+  pinnedOnly: document.querySelector("#pinnedOnly"),
   summaryMode: document.querySelector("#summaryMode"),
   exportCsv: document.querySelector("#exportCsv"),
 };
+
+const defaultDrivers = {
+  "gpu-ai": ["新品迭代", "云厂商资本开支", "HBM供给", "先进封装瓶颈"],
+  hbm: ["AI服务器需求", "原厂扩产", "良率爬坡", "长期合约"],
+  cowos: ["先进封装瓶颈", "中介层/载板供给", "大客户排产"],
+  optical: ["AI集群互联", "800G到1.6T切换", "云厂商拉货"],
+  nand: ["原厂控产", "企业级SSD需求", "渠道库存去化"],
+  dram: ["DDR5升级", "服务器需求", "产能转向HBM"],
+  "wafer-foundry": ["先进节点满载", "海外厂进度", "AI挤占产能"],
+  materials: ["晶圆厂稼动率", "材料国产替代", "出口管制"],
+  equipment: ["晶圆厂资本开支", "设备交期", "出口管制"],
+  smartphone: ["终端库存", "AI PC换机", "手机容量提升"],
+};
+
+const defaultInfluence = {
+  "gpu-ai": ["hbm", "cowos", "optical"],
+  hbm: ["gpu-ai", "cowos", "dram"],
+  cowos: ["gpu-ai", "wafer-foundry"],
+  optical: ["gpu-ai", "demand"],
+  nand: ["smartphone"],
+  dram: ["hbm", "smartphone"],
+  "wafer-foundry": ["gpu-ai", "cowos", "materials", "equipment"],
+  materials: ["wafer-foundry"],
+  equipment: ["wafer-foundry"],
+  smartphone: ["dram", "nand", "wafer-foundry"],
+};
+
+function getDrivers(node) {
+  return node.drivers || defaultDrivers[node.id] || ["需求变化", "供给变化", "价格周期"];
+}
+
+function getInfluence(node) {
+  return node.influence || defaultInfluence[node.id] || [];
+}
+
+function getAlerts(node) {
+  if (Array.isArray(node.alerts) && node.alerts.length) return node.alerts;
+  const evidenceCount = node.evidence?.length || 0;
+  if (evidenceCount >= 5) return [{ level: "red", label: "新信号密集", text: `过去7天抓取到 ${evidenceCount} 条相关证据。` }];
+  if (evidenceCount >= 2) return [{ level: "yellow", label: "需要观察", text: `过去7天抓取到 ${evidenceCount} 条相关证据。` }];
+  return [{ level: "green", label: "暂无明显新增", text: "过去7天公开来源信号较少。" }];
+}
+
+function metricMidpoint(value) {
+  const nums = String(value).match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
+  if (!nums.length) return 50;
+  if (nums.length === 1) return nums[0];
+  return (nums[0] + nums[1]) / 2;
+}
+
+function getHistory(node, metricKey) {
+  if (node.history?.[metricKey]?.length) return node.history[metricKey];
+  const base = metricMidpoint(node.metrics[metricKey].value);
+  return [-3, -2, -1, 0].map((offset, index) => ({
+    label: `${90 - index * 30}天前`,
+    value: Math.max(0, Math.round(base * (1 + offset * 0.025))),
+  })).concat([{ label: "当前", value: Math.max(0, Math.round(base)) }]);
+}
+
+function isPinned(nodeId) {
+  return state.pinned.includes(nodeId);
+}
+
+function savePinned() {
+  localStorage.setItem("semiconductor-pinned-nodes", JSON.stringify(state.pinned));
+}
+
+function setView(view) {
+  els.viewTabs.forEach((tab) => {
+    const active = tab.dataset.viewTab === view;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-pressed", String(active));
+  });
+
+  els.viewSections.forEach((section) => {
+    section.classList.toggle("active", section.dataset.view === view);
+  });
+
+  localStorage.setItem("semiconductor-active-view", view);
+}
 
 function uniqueRegions() {
   return [...new Set(nodes.flatMap((node) => node.regions))].sort((a, b) => a.localeCompare(b, "zh-CN"));
@@ -230,16 +329,19 @@ function filteredNodes() {
     const stageMatch = state.stage === "all" || node.stage === state.stage;
     const regionMatch = state.region === "all" || node.regions.includes(state.region);
     const metricMatch = state.metric === "all" || Boolean(node.metrics[state.metric]);
+    const pinnedMatch = !state.pinnedOnly || isPinned(node.id);
     const haystack = [
       node.product,
       node.companies,
       node.signal,
       node.confidence,
+      ...(node.query ? [node.query] : []),
+      ...getDrivers(node),
       ...node.regions,
       ...Object.values(node.metrics).flatMap((metric) => [metric.value, metric.unit, metric.change, metric.note]),
       stages.find((stage) => stage.id === node.stage)?.name,
     ].join(" ").toLowerCase();
-    return stageMatch && regionMatch && metricMatch && haystack.includes(query);
+    return stageMatch && regionMatch && metricMatch && pinnedMatch && haystack.includes(query);
   });
 }
 
@@ -275,8 +377,10 @@ function renderNodes() {
   els.resultCount.textContent = `${list.length} 个结果`;
   els.nodeCount.textContent = nodes.length;
   els.hotCount.textContent = nodes.filter((node) => node.priority === "hot").length;
+  els.alertCount.textContent = nodes.reduce((sum, node) => sum + getAlerts(node).filter((alert) => alert.level !== "green").length, 0);
   if (els.dataUpdated) els.dataUpdated.textContent = datasetMeta.updatedAt || "未知";
   if (els.dataSourceNote) els.dataSourceNote.textContent = datasetMeta.sourceNote || "自动更新数据";
+  if (els.pinnedOnly) els.pinnedOnly.setAttribute("aria-pressed", String(state.pinnedOnly));
 
   if (!list.some((node) => node.id === state.selected)) {
     state.selected = list[0]?.id || "";
@@ -291,9 +395,13 @@ function renderNodes() {
           <span class="pill">${stage.name}</span>
           <span class="status ${node.priority}">${statusText[node.priority]}</span>
         </div>
+        <span class="pin-indicator ${isPinned(node.id) ? "pinned" : ""}">${isPinned(node.id) ? "已关注" : "未关注"}</span>
         <h3>${node.product}</h3>
         <p>${node.signal}</p>
         <div class="metrics">${metricMarkup(node)}</div>
+        <div class="driver-tags compact">
+          ${getDrivers(node).slice(0, 3).map((driver) => `<span>${driver}</span>`).join("")}
+        </div>
         <div class="card-foot">
           <span class="tag">置信度：${node.confidence}</span>
           ${node.regions.map((region) => `<span class="tag">${region}</span>`).join("")}
@@ -303,6 +411,9 @@ function renderNodes() {
   }).join("") || '<p class="empty">没有匹配的节点。换一个筛选条件试试。</p>';
 
   renderDetail();
+  renderBriefing();
+  renderAlerts();
+  renderSourceManager();
 }
 
 function renderDetail() {
@@ -314,16 +425,26 @@ function renderDetail() {
   }
 
   const stage = stages.find((item) => item.id === node.stage);
+  const influenced = getInfluence(node)
+    .map((id) => nodes.find((item) => item.id === id))
+    .filter(Boolean);
   els.detailTitle.textContent = node.product;
   els.detailBody.innerHTML = `
+    <button class="small-button pin-toggle" type="button" data-pin="${node.id}" aria-pressed="${isPinned(node.id)}">
+      ${isPinned(node.id) ? "取消关注" : "加入关注清单"}
+    </button>
     <p><strong>所属环节：</strong>${stage.name}</p>
     <p><strong>代表公司：</strong>${node.companies}</p>
     <p><strong>覆盖地区：</strong>${node.regions.join("、")}</p>
     <p><strong>数据口径：</strong>当前为研究模板中的区间估算，用于展示追踪方法；接入真实数据源后应替换为来源日期、数值和链接。</p>
+    <h3>为什么变化</h3>
+    <div class="driver-tags">
+      ${getDrivers(node).map((driver) => `<span>${driver}</span>`).join("")}
+    </div>
     ${node.evidence?.length ? `
       <h3>自动抓取证据</h3>
       <ul class="questions evidence-list">
-        ${node.evidence.map((item) => `<li><a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a><br><span>${item.source || "公开来源"} · ${item.date || ""}</span></li>`).join("")}
+        ${node.evidence.map((item) => `<li><a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a><br><span>${item.source || "公开来源"} · ${item.date || ""} · ${item.credibility || "公开来源"}</span></li>`).join("")}
       </ul>
     ` : ""}
     <div class="detail-table quantitative">
@@ -340,10 +461,32 @@ function renderDetail() {
         `;
       }).join("")}
     </div>
+    <h3>90天趋势</h3>
+    <div class="trend-grid">
+      ${Object.entries(metricNames).map(([key, label]) => renderTrend(label, getHistory(node, key))).join("")}
+    </div>
+    <h3>影响链条</h3>
+    <div class="influence-chain">
+      <strong>${node.product}</strong>
+      ${influenced.length ? influenced.map((item) => `<span>→</span><button type="button" data-node="${item.id}">${item.product}</button>`).join("") : "<span>暂无下游映射</span>"}
+    </div>
     <h3>下一步要问的问题</h3>
     <ul class="questions">
       ${node.questions.map((question) => `<li>${question}</li>`).join("")}
     </ul>
+  `;
+}
+
+function renderTrend(label, history) {
+  const max = Math.max(...history.map((item) => item.value), 1);
+  return `
+    <div class="trend-card">
+      <strong>${label}</strong>
+      <div class="spark-bars">
+        ${history.map((item) => `<span style="height:${Math.max(12, Math.round((item.value / max) * 64))}px" title="${item.label}: ${item.value}"></span>`).join("")}
+      </div>
+      <small>${history[0].value} → ${history[history.length - 1].value}</small>
+    </div>
   `;
 }
 
@@ -357,6 +500,62 @@ function renderWatchlist() {
     const price = node.metrics.price;
     const capacity = node.metrics.capacity;
     return `<li><strong>${node.product}</strong><br><span>价格 ${price.value}（${price.change}）；产能 ${capacity.value}（${capacity.change}）</span></li>`;
+  }).join("");
+}
+
+function renderBriefing() {
+  if (!els.dailyBriefing) return;
+  const pinned = nodes.filter((node) => isPinned(node.id));
+  const candidates = (pinned.length ? pinned : nodes).sort((a, b) => {
+    const score = { hot: 0, watch: 1, steady: 2 };
+    return score[a.priority] - score[b.priority] || (b.evidence?.length || 0) - (a.evidence?.length || 0);
+  });
+  const top = candidates.slice(0, 3);
+  const names = top.map((node) => node.product).join("、");
+  const evidenceTotal = top.reduce((sum, node) => sum + (node.evidence?.length || 0), 0);
+  els.briefingBadge.textContent = pinned.length ? `关注清单 ${pinned.length}` : "全局简报";
+  els.dailyBriefing.textContent = `今日建议优先看 ${names || "暂无节点"}。重点判断价格、库存、产能三类变化是否互相印证；当前重点节点过去7天共有 ${evidenceTotal} 条公开证据进入看板。`;
+
+  const drivers = [...new Set(top.flatMap(getDrivers))].slice(0, 8);
+  els.driverTags.innerHTML = drivers.map((driver) => `<span>${driver}</span>`).join("");
+}
+
+function renderAlerts() {
+  if (!els.alertList) return;
+  const rows = nodes.flatMap((node) => getAlerts(node).map((alert) => ({ node, alert })))
+    .sort((a, b) => {
+      const score = { red: 0, yellow: 1, green: 2 };
+      return score[a.alert.level] - score[b.alert.level];
+    })
+    .slice(0, 8);
+
+  els.alertList.innerHTML = rows.map(({ node, alert }) => `
+    <button type="button" data-node="${node.id}" class="alert-item ${alert.level}">
+      <strong>${alert.label}</strong>
+      <span>${node.product}</span>
+      <small>${alert.text}</small>
+    </button>
+  `).join("");
+}
+
+function credibilityForEvidence(item) {
+  return item.credibility || "公开来源";
+}
+
+function renderSourceManager() {
+  if (!els.sourceManagerGrid) return;
+  els.sourceManagerGrid.innerHTML = nodes.map((node) => {
+    const evidenceCount = node.evidence?.length || 0;
+    const credibility = node.evidence?.length
+      ? [...new Set(node.evidence.map(credibilityForEvidence))].join(" / ")
+      : "暂无自动证据";
+    return `
+      <article class="source-row">
+        <strong>${node.product}</strong>
+        <span>${node.query || "未设置关键词"}</span>
+        <small>${evidenceCount} 条证据 · ${credibility}</small>
+      </article>
+    `;
   }).join("");
 }
 
@@ -430,6 +629,46 @@ els.nodeGrid.addEventListener("click", (event) => {
   renderNodes();
 });
 
+els.detailBody.addEventListener("click", (event) => {
+  const pinButton = event.target.closest("[data-pin]");
+  if (pinButton) {
+    const id = pinButton.dataset.pin;
+    state.pinned = isPinned(id) ? state.pinned.filter((item) => item !== id) : [...state.pinned, id];
+    savePinned();
+    renderNodes();
+    return;
+  }
+
+  const nodeButton = event.target.closest("[data-node]");
+  if (nodeButton) {
+    state.selected = nodeButton.dataset.node;
+    renderNodes();
+  }
+});
+
+els.alertList?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-node]");
+  if (!button) return;
+  state.selected = button.dataset.node;
+  renderNodes();
+});
+
+els.stocksGrid?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-node]");
+  if (!button || !button.dataset.node) return;
+  state.selected = button.dataset.node;
+  renderNodes();
+});
+
+els.pinnedOnly?.addEventListener("click", () => {
+  state.pinnedOnly = !state.pinnedOnly;
+  renderNodes();
+});
+
+els.viewTabs.forEach((tab) => {
+  tab.addEventListener("click", () => setView(tab.dataset.viewTab));
+});
+
 els.summaryMode.addEventListener("click", () => {
   const enabled = document.body.classList.toggle("summary");
   els.summaryMode.setAttribute("aria-pressed", String(enabled));
@@ -455,12 +694,64 @@ async function loadRemoteData() {
   }
 }
 
+async function loadStockData() {
+  try {
+    const response = await fetch("data/stocks.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    if (!Array.isArray(payload.stocks)) return;
+    stockData = payload;
+  } catch (error) {
+    console.info("Stock data unavailable.", error);
+  }
+}
+
+function formatPrice(stock) {
+  if (stock.price == null) return "暂无";
+  const currency = stock.currency ? `${stock.currency} ` : "";
+  return `${currency}${stock.price}`;
+}
+
+function formatChange(stock) {
+  if (stock.changePercent == null) return "等待更新";
+  const sign = stock.changePercent > 0 ? "+" : "";
+  return `${sign}${stock.changePercent}%`;
+}
+
+function renderStocks() {
+  if (!els.stocksGrid) return;
+  els.stocksUpdated.textContent = stockData.updatedAt ? `行情 ${stockData.updatedAt}` : "等待更新";
+  if (!stockData.stocks.length) {
+    els.stocksGrid.innerHTML = '<p class="empty">暂无行情数据。GitHub Actions 运行后会生成 data/stocks.json。</p>';
+    return;
+  }
+
+  els.stocksGrid.innerHTML = stockData.stocks.map((stock) => {
+    const direction = stock.changePercent == null ? "flat" : stock.changePercent > 0 ? "up" : stock.changePercent < 0 ? "down" : "flat";
+    const linked = nodes.find((node) => node.id === stock.linkNode || node.stage === stock.linkNode);
+    return `
+      <button type="button" class="stock-card stock-${direction}" data-node="${linked?.id || ""}">
+        <div>
+          <strong>${stock.name}</strong>
+          <span>${stock.symbol} · ${stock.region}</span>
+        </div>
+        <b>${formatPrice(stock)}</b>
+        <small>${formatChange(stock)} · ${stock.exchange || stock.quoteSource || "公开源"}</small>
+        <em>${linked ? linked.product : "产业链观察"}</em>
+      </button>
+    `;
+  }).join("");
+}
+
 async function initialize() {
   await loadRemoteData();
+  await loadStockData();
   buildOptions();
   renderChainMap();
   renderNodes();
   renderWatchlist();
+  renderStocks();
+  setView(localStorage.getItem("semiconductor-active-view") || "overview");
 }
 
 initialize();

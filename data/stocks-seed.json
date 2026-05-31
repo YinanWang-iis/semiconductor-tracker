@@ -1,0 +1,18 @@
+[
+  { "symbol": "NVDA", "name": "NVIDIA", "region": "美国", "linkNode": "gpu-ai", "yahoo": "NVDA" },
+  { "symbol": "AMD", "name": "AMD", "region": "美国", "linkNode": "gpu-ai", "yahoo": "AMD" },
+  { "symbol": "TSM", "name": "TSMC ADR", "region": "台湾/美国", "linkNode": "wafer-foundry", "yahoo": "TSM" },
+  { "symbol": "2330.TW", "name": "台积电", "region": "台湾", "linkNode": "wafer-foundry", "yahoo": "2330.TW" },
+  { "symbol": "MU", "name": "Micron", "region": "美国", "linkNode": "memory", "yahoo": "MU" },
+  { "symbol": "INTC", "name": "Intel", "region": "美国", "linkNode": "wafer-foundry", "yahoo": "INTC" },
+  { "symbol": "ASML", "name": "ASML ADR", "region": "欧洲/美国", "linkNode": "equipment", "yahoo": "ASML" },
+  { "symbol": "AMAT", "name": "Applied Materials", "region": "美国", "linkNode": "equipment", "yahoo": "AMAT" },
+  { "symbol": "LRCX", "name": "Lam Research", "region": "美国", "linkNode": "equipment", "yahoo": "LRCX" },
+  { "symbol": "KLAC", "name": "KLA", "region": "美国", "linkNode": "equipment", "yahoo": "KLAC" },
+  { "symbol": "COHR", "name": "Coherent", "region": "美国", "linkNode": "optical", "yahoo": "COHR" },
+  { "symbol": "LITE", "name": "Lumentum", "region": "美国", "linkNode": "optical", "yahoo": "LITE" },
+  { "symbol": "2454.TW", "name": "联发科", "region": "台湾", "linkNode": "design", "yahoo": "2454.TW" },
+  { "symbol": "3711.TW", "name": "日月光投控", "region": "台湾", "linkNode": "packaging", "yahoo": "3711.TW" },
+  { "symbol": "8035.T", "name": "Tokyo Electron", "region": "日本", "linkNode": "equipment", "yahoo": "8035.T" },
+  { "symbol": "3436.T", "name": "SUMCO", "region": "日本", "linkNode": "materials", "yahoo": "3436.T" }
+]

@@ -52,7 +52,15 @@
         </label>
       </section>
 
-      <section class="overview-grid" aria-label="总览">
+      <nav class="view-tabs" aria-label="功能切换">
+        <button type="button" class="view-tab active" data-view-tab="overview">总览</button>
+        <button type="button" class="view-tab" data-view-tab="chain">产业链</button>
+        <button type="button" class="view-tab" data-view-tab="stocks">股市</button>
+        <button type="button" class="view-tab" data-view-tab="sources">证据/来源</button>
+        <button type="button" class="view-tab" data-view-tab="settings">设置</button>
+      </nav>
+
+      <section class="overview-grid view-section active" data-view="overview" aria-label="总览">
         <article class="kpi">
           <span>追踪节点</span>
           <strong id="nodeCount">0</strong>
@@ -62,6 +70,11 @@
           <span>高优先级</span>
           <strong id="hotCount">0</strong>
           <small>需要优先阅读</small>
+        </article>
+        <article class="kpi">
+          <span>变化提醒</span>
+          <strong id="alertCount">0</strong>
+          <small>过去7天新信号</small>
         </article>
         <article class="kpi">
           <span>三大指标</span>
@@ -75,7 +88,43 @@
         </article>
       </section>
 
-      <section class="layout">
+      <section class="briefing-layout view-section active" data-view="overview">
+        <article class="briefing-panel">
+          <div class="section-heading row-heading">
+            <div>
+              <p>父亲每日简报</p>
+              <h2>今天先看什么</h2>
+            </div>
+            <span class="pill" id="briefingBadge">自动生成</span>
+          </div>
+          <p id="dailyBriefing">正在整理重点信号。</p>
+          <div id="driverTags" class="driver-tags"></div>
+        </article>
+
+        <article class="alerts-panel">
+          <div class="section-heading">
+            <p>变化提醒</p>
+            <h2>红黄绿信号</h2>
+          </div>
+          <div id="alertList" class="alert-list"></div>
+        </article>
+      </section>
+
+      <section class="stocks-panel view-section" data-view="stocks">
+        <div class="section-heading row-heading">
+          <div>
+            <p>相关公司股市信息</p>
+            <h2>产业链公司行情观察</h2>
+          </div>
+          <span id="stocksUpdated" class="pill">等待更新</span>
+        </div>
+        <div id="stocksGrid" class="stocks-grid"></div>
+        <p class="market-note">
+          股价信息用于产业链观察，不构成投资建议。公开免费源可能为延迟行情，且覆盖范围和稳定性有限。
+        </p>
+      </section>
+
+      <section class="layout view-section" data-view="chain">
         <aside class="map-panel" aria-label="产业链拆解">
           <div class="section-heading">
             <p>拆分产业链</p>
@@ -90,13 +139,16 @@
               <p>节点追踪</p>
               <h2>产品、公司与三大变化</h2>
             </div>
-            <span id="resultCount" class="pill">0 个结果</span>
+            <div class="heading-actions">
+              <button id="pinnedOnly" class="small-button" type="button" aria-pressed="false">只看关注</button>
+              <span id="resultCount" class="pill">0 个结果</span>
+            </div>
           </div>
           <div id="nodeGrid" class="node-grid"></div>
         </section>
       </section>
 
-      <section class="detail-layout">
+      <section class="detail-layout view-section" data-view="chain">
         <article class="detail-panel" aria-live="polite">
           <div class="section-heading">
             <p>选中节点</p>
@@ -116,7 +168,7 @@
         </article>
       </section>
 
-      <section class="sources">
+      <section class="sources view-section" data-view="sources">
         <div class="section-heading">
           <p>后续接入</p>
           <h2>建议数据源入口</h2>
@@ -130,6 +182,42 @@
           <a href="https://www.trendforce.com/" target="_blank" rel="noreferrer">TrendForce</a>
           <a href="https://www.wsts.org/" target="_blank" rel="noreferrer">WSTS</a>
           <a href="https://www.semi.org/" target="_blank" rel="noreferrer">SEMI</a>
+        </div>
+      </section>
+
+      <section class="source-manager view-section" data-view="sources">
+        <div class="section-heading row-heading">
+          <div>
+            <p>数据源管理</p>
+            <h2>关键词、来源与可信度</h2>
+          </div>
+          <span class="pill">可继续调优</span>
+        </div>
+        <div id="sourceManagerGrid" class="source-manager-grid"></div>
+      </section>
+
+      <section class="settings-panel view-section" data-view="settings">
+        <div class="section-heading">
+          <p>设置</p>
+          <h2>显示和自动更新</h2>
+        </div>
+        <div class="settings-grid">
+          <article>
+            <strong>父亲摘要模式</strong>
+            <p>顶部“摘”按钮会隐藏部分说明文字，让卡片更短。</p>
+          </article>
+          <article>
+            <strong>关注清单</strong>
+            <p>在产业链详情里点击“加入关注清单”，总览简报会优先围绕关注节点生成。</p>
+          </article>
+          <article>
+            <strong>自动更新</strong>
+            <p>GitHub Actions 每天生成产业链新闻证据和股市数据；如果配置 API key，会启用更强的数据源。</p>
+          </article>
+          <article>
+            <strong>导出</strong>
+            <p>顶部“下”按钮会导出当前筛选后的产业链节点 CSV。</p>
+          </article>
         </div>
       </section>
     </main>
