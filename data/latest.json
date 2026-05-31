@@ -1,0 +1,317 @@
+{
+  "updatedAt": "2026-05-31",
+  "mode": "auto-public-sources",
+  "sourceNote": "GitHub Actions 每日自动更新；公开新闻证据 + 关键词规则 + 种子量化口径",
+  "nodes": [
+    {
+      "id": "gpu-ai",
+      "stage": "design",
+      "product": "AI GPU / 加速卡",
+      "companies": "NVIDIA、AMD、云厂商自研芯片",
+      "regions": [
+        "美国",
+        "台湾"
+      ],
+      "priority": "hot",
+      "query": "NVIDIA OR AMD AI GPU accelerator HBM supply capacity pricing inventory",
+      "signal": "新产品节奏与交付周期决定上游封装、HBM、服务器需求。",
+      "metrics": {
+        "price": {
+          "value": "100-120",
+          "unit": "价格指数",
+          "change": "+8% QoQ",
+          "trend": "up",
+          "note": "以2025年均值=100估算，反映高端加速卡议价能力。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "4-8",
+          "unit": "周",
+          "change": "-2周 QoQ",
+          "trend": "down",
+          "note": "渠道与系统厂商可见库存周数，越低越紧。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "70-85",
+          "unit": "%供给受限",
+          "change": "+5pct QoQ",
+          "trend": "up",
+          "note": "受HBM、CoWoS和板卡交付限制的订单比例估算。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "新品是否提高HBM用量？",
+        "主要云厂商订单是否提前或延后？",
+        "板卡交期是否变化？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "hbm",
+      "stage": "memory",
+      "product": "HBM 高带宽存储",
+      "companies": "SK hynix、Samsung、Micron",
+      "regions": [
+        "韩国",
+        "美国",
+        "台湾",
+        "日本"
+      ],
+      "priority": "hot",
+      "query": "HBM HBM3E HBM4 SK hynix Samsung Micron price capacity inventory",
+      "signal": "AI服务器最敏感的存储节点，关注扩产、良率、长期合约价格。",
+      "metrics": {
+        "price": {
+          "value": "115-140",
+          "unit": "合约价指数",
+          "change": "+12% QoQ",
+          "trend": "up",
+          "note": "以2025年均值=100估算，HBM3E/HBM4溢价仍高。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "2-4",
+          "unit": "周",
+          "change": "-1周 QoQ",
+          "trend": "down",
+          "note": "大客户长期锁单后，现货可得库存偏低。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "35-50",
+          "unit": "% YoY",
+          "change": "+40% YoY",
+          "trend": "up",
+          "note": "主要厂商扩产斜率估算，需继续核实良率。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "HBM3E/HBM4切换是否顺利？",
+        "先进封装产能是否匹配？",
+        "客户预付款或长期合约变化？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "cowos",
+      "stage": "packaging",
+      "product": "CoWoS / 2.5D先进封装",
+      "companies": "TSMC、ASE、Amkor、Ibiden",
+      "regions": [
+        "台湾",
+        "日本",
+        "美国"
+      ],
+      "priority": "hot",
+      "query": "TSMC CoWoS advanced packaging capacity AI GPU substrate interposer",
+      "signal": "AI芯片放量的瓶颈之一，产能开出会影响GPU交付。",
+      "metrics": {
+        "price": {
+          "value": "110-130",
+          "unit": "代工价指数",
+          "change": "+6% QoQ",
+          "trend": "up",
+          "note": "以2025年均值=100估算，瓶颈工序议价能力强。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "12-24",
+          "unit": "周排队",
+          "change": "-4周 QoQ",
+          "trend": "down",
+          "note": "客户排队周期，下降代表瓶颈有所缓解。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "60-80",
+          "unit": "千片/月",
+          "change": "+25% QoQ",
+          "trend": "up",
+          "note": "等效先进封装月产能估算，适合后续替换为公司披露值。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "月产能是否按计划释放？",
+        "载板和中介层是否短缺？",
+        "客户排产优先级是否变化？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "optical",
+      "stage": "module",
+      "product": "800G / 1.6T 光模块",
+      "companies": "Coherent、Lumentum、中际旭创、新易盛",
+      "regions": [
+        "美国",
+        "中国大陆",
+        "日本"
+      ],
+      "priority": "watch",
+      "query": "800G 1.6T optical module AI datacenter capacity ASP inventory",
+      "signal": "AI集群互联带动高速光模块需求，关注产能投放和ASP变化。",
+      "metrics": {
+        "price": {
+          "value": "$450-900",
+          "unit": "ASP/只",
+          "change": "-8% QoQ",
+          "trend": "down",
+          "note": "800G产品价格区间估算，1.6T早期产品另看溢价。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "6-10",
+          "unit": "周",
+          "change": "+1周 QoQ",
+          "trend": "up",
+          "note": "客户拉货节奏影响明显，需按大客户拆分。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "20-35",
+          "unit": "% YoY",
+          "change": "+28% YoY",
+          "trend": "up",
+          "note": "高速光模块产线扩张速度估算。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "1.6T切换时间点？",
+        "硅光方案是否放量？",
+        "大客户资本开支是否上修？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "nand",
+      "stage": "memory",
+      "product": "NAND / 企业级SSD",
+      "companies": "Samsung、Kioxia、Western Digital、Micron、长江存储",
+      "regions": [
+        "日本",
+        "美国",
+        "中国大陆",
+        "韩国"
+      ],
+      "priority": "watch",
+      "query": "NAND enterprise SSD Samsung Kioxia Western Digital Micron price inventory capacity",
+      "signal": "价格周期与库存去化有关，企业级SSD受AI服务器和云需求拉动。",
+      "metrics": {
+        "price": {
+          "value": "95-110",
+          "unit": "NAND指数",
+          "change": "+4% QoQ",
+          "trend": "up",
+          "note": "以2025年均值=100估算，企业级SSD强于消费级。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "8-14",
+          "unit": "周",
+          "change": "-3周 QoQ",
+          "trend": "down",
+          "note": "渠道与原厂库存周数估算，低于12周通常更健康。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "-5~+5",
+          "unit": "% Wafer YoY",
+          "change": "持平",
+          "trend": "flat",
+          "note": "原厂仍偏谨慎，新增晶圆投片有限。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "原厂是否继续控产？",
+        "企业级SSD报价是否强于消费级？",
+        "渠道库存周数是否下降？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "dram",
+      "stage": "memory",
+      "product": "通用DRAM",
+      "companies": "Samsung、SK hynix、Micron、南亚科",
+      "regions": [
+        "美国",
+        "台湾",
+        "日本",
+        "韩国"
+      ],
+      "priority": "watch",
+      "query": "DRAM DDR5 server DRAM contract price inventory capacity Samsung Micron SK hynix",
+      "signal": "PC、手机、服务器共同影响价格，需拆分DDR5、LPDDR、服务器DRAM。",
+      "metrics": {
+        "price": {
+          "value": "105-118",
+          "unit": "DRAM指数",
+          "change": "+7% QoQ",
+          "trend": "up",
+          "note": "以2025年均值=100估算，DDR5与服务器DRAM更强。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "7-12",
+          "unit": "周",
+          "change": "-2周 QoQ",
+          "trend": "down",
+          "note": "库存改善，但终端需求不同步。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "10-20",
+          "unit": "%转向HBM",
+          "change": "+4pct QoQ",
+          "trend": "up",
+          "note": "部分先进产能向HBM倾斜，压缩通用DRAM供给弹性。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "DDR5合约价是否继续上涨？",
+        "手机库存是否健康？",
+        "产能是否从通用DRAM转向HBM？"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "wafer-foundry",
+      "stage": "wafer",
+      "product": "先进制程代工",
+      "companies": "TSMC、Samsung Foundry、Intel Foundry",
+      "regions": [
+        "台湾",
+        "美国",
+        "日本"
+      ],
+      "priority": "hot",
+      "query": "advanced node foundry TSMC Samsung Intel 3nm 2nm wafer price utilization capacity",
+      "signal": "先进制程产能、报价和客户排队决定高端芯片供给。",
+      "metrics": {
+        "price": {
+          "value": "$16k-22k",
+          "unit": "每片晶圆",
+          "change": "+3% QoQ",
+          "trend": "up",
+          "note": "先进节点等效晶圆报价区间估算，节点和客户差异很大。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "inventory": {
+          "value": "80-95",
+          "unit": "%稼动率",
+          "change": "+5pct QoQ",
+          "trend": "up",
+          "note": "用稼动率替代库存观察，越接近满载越紧。 过去7天未抓取到明显相关新闻信号。"
+        },
+        "capacity": {
+          "value": "5-12",
+          "unit": "% YoY",
+          "change": "+8% YoY",
+          "trend": "up",
+          "note": "先进制程可用产能增速估算，海外厂进度需单独跟踪。 过去7天未抓取到明显相关新闻信号。"
+        }
+      },
+      "confidence": "低",
+      "questions": [
+        "3nm/2nm客户排产是否满载？",
+        "海外晶圆厂进度是否延后？",
+        "AI客户是否挤占消费电子产能？"
+      ],
+      "evidence": []
+    }
+  ]
+}

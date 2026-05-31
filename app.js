@@ -1,42 +1,14 @@
 const stages = [
-  {
-    id: "upstream",
-    name: "上游材料与设备",
-    note: "硅片、光刻胶、电子气体、光刻/刻蚀/沉积设备",
-  },
-  {
-    id: "design",
-    name: "芯片设计与IP",
-    note: "GPU、CPU、AI ASIC、存储控制器、EDA/IP",
-  },
-  {
-    id: "wafer",
-    name: "晶圆制造",
-    note: "先进制程、成熟制程、HBM逻辑底座、代工产能",
-  },
-  {
-    id: "memory",
-    name: "存储制造",
-    note: "DRAM、NAND、HBM、企业级SSD",
-  },
-  {
-    id: "packaging",
-    name: "先进封装与测试",
-    note: "CoWoS、2.5D/3D封装、测试插座、载板",
-  },
-  {
-    id: "module",
-    name: "光模块与服务器",
-    note: "800G/1.6T光模块、交换机、AI服务器整机",
-  },
-  {
-    id: "demand",
-    name: "下游需求",
-    note: "云厂商、手机、PC、汽车、工业与边缘AI",
-  },
+  { id: "upstream", name: "上游材料与设备", note: "硅片、光刻胶、电子气体、光刻/刻蚀/沉积设备" },
+  { id: "design", name: "芯片设计与IP", note: "GPU、CPU、AI ASIC、存储控制器、EDA/IP" },
+  { id: "wafer", name: "晶圆制造", note: "先进制程、成熟制程、HBM逻辑底座、代工产能" },
+  { id: "memory", name: "存储制造", note: "DRAM、NAND、HBM、企业级SSD" },
+  { id: "packaging", name: "先进封装与测试", note: "CoWoS、2.5D/3D封装、测试插座、载板" },
+  { id: "module", name: "光模块与服务器", note: "800G/1.6T光模块、交换机、AI服务器整机" },
+  { id: "demand", name: "下游需求", note: "云厂商、手机、PC、汽车、工业与边缘AI" },
 ];
 
-const nodes = [
+let nodes = [
   {
     id: "gpu-ai",
     stage: "design",
@@ -45,7 +17,12 @@ const nodes = [
     regions: ["美国", "台湾"],
     priority: "hot",
     signal: "新产品节奏与交付周期决定上游封装、HBM、服务器需求。",
-    metrics: { price: "议价能力强", inventory: "渠道紧", capacity: "受封装/HBM约束" },
+    metrics: {
+      price: { value: "100-120", unit: "价格指数", change: "+8% QoQ", trend: "up", note: "以2025年均值=100估算，反映高端加速卡议价能力。" },
+      inventory: { value: "4-8", unit: "周", change: "-2周 QoQ", trend: "down", note: "渠道与系统厂商可见库存周数，越低越紧。" },
+      capacity: { value: "70-85", unit: "%供给受限", change: "+5pct QoQ", trend: "up", note: "受HBM、CoWoS和板卡交付限制的订单比例估算。" },
+    },
+    confidence: "中",
     questions: ["新品是否提高HBM用量？", "主要云厂商订单是否提前或延后？", "板卡交期是否变化？"],
   },
   {
@@ -56,7 +33,12 @@ const nodes = [
     regions: ["韩国", "美国", "台湾", "日本"],
     priority: "hot",
     signal: "AI服务器最敏感的存储节点，关注扩产、良率、长期合约价格。",
-    metrics: { price: "上行", inventory: "偏紧", capacity: "扩产中" },
+    metrics: {
+      price: { value: "115-140", unit: "合约价指数", change: "+12% QoQ", trend: "up", note: "以2025年均值=100估算，HBM3E/HBM4溢价仍高。" },
+      inventory: { value: "2-4", unit: "周", change: "-1周 QoQ", trend: "down", note: "大客户长期锁单后，现货可得库存偏低。" },
+      capacity: { value: "35-50", unit: "% YoY", change: "+40% YoY", trend: "up", note: "主要厂商扩产斜率估算，需继续核实良率。" },
+    },
+    confidence: "中",
     questions: ["HBM3E/HBM4切换是否顺利？", "先进封装产能是否匹配？", "客户预付款或长期合约变化？"],
   },
   {
@@ -67,7 +49,12 @@ const nodes = [
     regions: ["台湾", "日本", "美国"],
     priority: "hot",
     signal: "AI芯片放量的瓶颈之一，产能开出会影响GPU交付。",
-    metrics: { price: "高位", inventory: "排队", capacity: "快速扩张" },
+    metrics: {
+      price: { value: "110-130", unit: "代工价指数", change: "+6% QoQ", trend: "up", note: "以2025年均值=100估算，瓶颈工序议价能力强。" },
+      inventory: { value: "12-24", unit: "周排队", change: "-4周 QoQ", trend: "down", note: "客户排队周期，下降代表瓶颈有所缓解。" },
+      capacity: { value: "60-80", unit: "千片/月", change: "+25% QoQ", trend: "up", note: "等效先进封装月产能估算，适合后续替换为公司披露值。" },
+    },
+    confidence: "中",
     questions: ["月产能是否按计划释放？", "载板和中介层是否短缺？", "客户排产优先级是否变化？"],
   },
   {
@@ -78,7 +65,12 @@ const nodes = [
     regions: ["美国", "中国大陆", "日本"],
     priority: "watch",
     signal: "AI集群互联带动高速光模块需求，关注产能投放和ASP变化。",
-    metrics: { price: "分化", inventory: "看客户拉货", capacity: "新增产线" },
+    metrics: {
+      price: { value: "$450-900", unit: "ASP/只", change: "-8% QoQ", trend: "down", note: "800G产品价格区间估算，1.6T早期产品另看溢价。" },
+      inventory: { value: "6-10", unit: "周", change: "+1周 QoQ", trend: "up", note: "客户拉货节奏影响明显，需按大客户拆分。" },
+      capacity: { value: "20-35", unit: "% YoY", change: "+28% YoY", trend: "up", note: "高速光模块产线扩张速度估算。" },
+    },
+    confidence: "低",
     questions: ["1.6T切换时间点？", "硅光方案是否放量？", "大客户资本开支是否上修？"],
   },
   {
@@ -89,7 +81,12 @@ const nodes = [
     regions: ["日本", "美国", "中国大陆", "韩国"],
     priority: "watch",
     signal: "价格周期与库存去化有关，企业级SSD受AI服务器和云需求拉动。",
-    metrics: { price: "周期波动", inventory: "需观察", capacity: "谨慎投放" },
+    metrics: {
+      price: { value: "95-110", unit: "NAND指数", change: "+4% QoQ", trend: "up", note: "以2025年均值=100估算，企业级SSD强于消费级。" },
+      inventory: { value: "8-14", unit: "周", change: "-3周 QoQ", trend: "down", note: "渠道与原厂库存周数估算，低于12周通常更健康。" },
+      capacity: { value: "-5~+5", unit: "% Wafer YoY", change: "持平", trend: "flat", note: "原厂仍偏谨慎，新增晶圆投片有限。" },
+    },
+    confidence: "中",
     questions: ["原厂是否继续控产？", "企业级SSD报价是否强于消费级？", "渠道库存周数是否下降？"],
   },
   {
@@ -100,7 +97,12 @@ const nodes = [
     regions: ["美国", "台湾", "日本", "韩国"],
     priority: "watch",
     signal: "PC、手机、服务器共同影响价格，需拆分DDR5、LPDDR、服务器DRAM。",
-    metrics: { price: "温和上行", inventory: "改善", capacity: "向HBM倾斜" },
+    metrics: {
+      price: { value: "105-118", unit: "DRAM指数", change: "+7% QoQ", trend: "up", note: "以2025年均值=100估算，DDR5与服务器DRAM更强。" },
+      inventory: { value: "7-12", unit: "周", change: "-2周 QoQ", trend: "down", note: "库存改善，但终端需求不同步。" },
+      capacity: { value: "10-20", unit: "%转向HBM", change: "+4pct QoQ", trend: "up", note: "部分先进产能向HBM倾斜，压缩通用DRAM供给弹性。" },
+    },
+    confidence: "中",
     questions: ["DDR5合约价是否继续上涨？", "手机库存是否健康？", "产能是否从通用DRAM转向HBM？"],
   },
   {
@@ -111,7 +113,12 @@ const nodes = [
     regions: ["台湾", "美国", "日本"],
     priority: "hot",
     signal: "先进制程产能、报价和客户排队决定高端芯片供给。",
-    metrics: { price: "稳中偏强", inventory: "按订单", capacity: "地区扩建" },
+    metrics: {
+      price: { value: "$16k-22k", unit: "每片晶圆", change: "+3% QoQ", trend: "up", note: "先进节点等效晶圆报价区间估算，节点和客户差异很大。" },
+      inventory: { value: "80-95", unit: "%稼动率", change: "+5pct QoQ", trend: "up", note: "用稼动率替代库存观察，越接近满载越紧。" },
+      capacity: { value: "5-12", unit: "% YoY", change: "+8% YoY", trend: "up", note: "先进制程可用产能增速估算，海外厂进度需单独跟踪。" },
+    },
+    confidence: "中",
     questions: ["3nm/2nm客户排产是否满载？", "海外晶圆厂进度是否延后？", "AI客户是否挤占消费电子产能？"],
   },
   {
@@ -122,7 +129,12 @@ const nodes = [
     regions: ["日本", "美国", "中国大陆", "台湾"],
     priority: "steady",
     signal: "上游材料决定成本和供应安全，价格通常滞后于晶圆厂稼动率。",
-    metrics: { price: "滞后调整", inventory: "相对稳定", capacity: "长期规划" },
+    metrics: {
+      price: { value: "98-105", unit: "材料指数", change: "+1% QoQ", trend: "flat", note: "以2025年均值=100估算，上游价格通常滞后。" },
+      inventory: { value: "10-16", unit: "周", change: "持平", trend: "flat", note: "关键材料安全库存一般高于下游成品。" },
+      capacity: { value: "3-8", unit: "% YoY", change: "+5% YoY", trend: "up", note: "长期扩产为主，短期弹性较低。" },
+    },
+    confidence: "低",
     questions: ["晶圆厂稼动率是否回升？", "关键材料是否国产替代？", "出口管制是否影响供应？"],
   },
   {
@@ -133,7 +145,12 @@ const nodes = [
     regions: ["美国", "日本", "中国大陆", "欧洲", "台湾"],
     priority: "watch",
     signal: "资本开支和出口管制直接影响未来产能开出。",
-    metrics: { price: "设备单价高", inventory: "订单积压", capacity: "交付周期长" },
+    metrics: {
+      price: { value: "100-108", unit: "设备价指数", change: "+2% QoQ", trend: "up", note: "高端设备价格刚性较强，更多看订单和交期。" },
+      inventory: { value: "6-12", unit: "月交期", change: "-1月 QoQ", trend: "down", note: "以交付周期替代库存观察，交期缩短代表供给缓解。" },
+      capacity: { value: "$95-110B", unit: "全球WFE", change: "+8% YoY", trend: "up", note: "晶圆制造设备支出区间估算，反映未来产能投放。" },
+    },
+    confidence: "低",
     questions: ["晶圆厂资本开支是否上修？", "关键设备交期是否缩短？", "管制清单是否变化？"],
   },
   {
@@ -144,22 +161,25 @@ const nodes = [
     regions: ["美国", "中国大陆", "台湾", "日本"],
     priority: "steady",
     signal: "消费电子决定通用DRAM/NAND和成熟制程复苏力度。",
-    metrics: { price: "传导较慢", inventory: "季节性", capacity: "弹性较高" },
+    metrics: {
+      price: { value: "0-3", unit: "%BOM压力", change: "+1pct QoQ", trend: "flat", note: "整机端对存储涨价的成本压力估算。" },
+      inventory: { value: "6-9", unit: "周", change: "-1周 QoQ", trend: "down", note: "整机与渠道库存周数估算，接近正常区间。" },
+      capacity: { value: "0-5", unit: "%出货YoY", change: "+3% YoY", trend: "up", note: "手机与PC合计需求增速估算，AI PC需单独观察。" },
+    },
+    confidence: "低",
     questions: ["整机库存是否回到正常？", "AI PC是否带来换机？", "手机存储容量是否提升？"],
   },
 ];
 
-const statusText = {
-  hot: "高优先级",
-  watch: "观察",
-  steady: "稳定跟踪",
+let datasetMeta = {
+  updatedAt: "2026-05-31",
+  mode: "static-template",
+  sourceNote: "模板示例，非实时行情",
 };
 
-const metricNames = {
-  price: "定价",
-  inventory: "库存",
-  capacity: "产能",
-};
+const statusText = { hot: "高优先级", watch: "观察", steady: "稳定跟踪" };
+const metricNames = { price: "定价", inventory: "库存", capacity: "产能" };
+const trendText = { up: "上行", down: "下行", flat: "持平" };
 
 const state = {
   stage: "all",
@@ -179,6 +199,8 @@ const els = {
   resultCount: document.querySelector("#resultCount"),
   nodeCount: document.querySelector("#nodeCount"),
   hotCount: document.querySelector("#hotCount"),
+  dataUpdated: document.querySelector("#dataUpdated"),
+  dataSourceNote: document.querySelector("#dataSourceNote"),
   detailTitle: document.querySelector("#detailTitle"),
   detailBody: document.querySelector("#detailBody"),
   watchlistItems: document.querySelector("#watchlistItems"),
@@ -212,42 +234,40 @@ function filteredNodes() {
       node.product,
       node.companies,
       node.signal,
+      node.confidence,
       ...node.regions,
+      ...Object.values(node.metrics).flatMap((metric) => [metric.value, metric.unit, metric.change, metric.note]),
       stages.find((stage) => stage.id === node.stage)?.name,
-    ]
-      .join(" ")
-      .toLowerCase();
+    ].join(" ").toLowerCase();
     return stageMatch && regionMatch && metricMatch && haystack.includes(query);
   });
 }
 
 function renderChainMap() {
-  els.chainMap.innerHTML = stages
-    .map((stage) => {
-      const count = nodes.filter((node) => node.stage === stage.id).length;
-      const active = state.stage === stage.id ? " active" : "";
-      return `
-        <button class="stage-button${active}" type="button" data-stage="${stage.id}">
-          <strong>${stage.name}</strong>
-          <span>${stage.note} · ${count} 个节点</span>
-        </button>
-      `;
-    })
-    .join("");
+  els.chainMap.innerHTML = stages.map((stage) => {
+    const count = nodes.filter((node) => node.stage === stage.id).length;
+    const active = state.stage === stage.id ? " active" : "";
+    return `
+      <button class="stage-button${active}" type="button" data-stage="${stage.id}">
+        <strong>${stage.name}</strong>
+        <span>${stage.note} · ${count} 个节点</span>
+      </button>
+    `;
+  }).join("");
 }
 
 function metricMarkup(node) {
-  return Object.entries(metricNames)
-    .map(([key, label]) => {
-      const deemphasize = state.metric !== "all" && state.metric !== key ? " tag" : "";
-      return `
-        <div class="metric${deemphasize}">
-          <span>${label}</span>
-          <strong>${node.metrics[key]}</strong>
-        </div>
-      `;
-    })
-    .join("");
+  return Object.entries(metricNames).map(([key, label]) => {
+    const metric = node.metrics[key];
+    const deemphasize = state.metric !== "all" && state.metric !== key ? " muted-metric" : "";
+    return `
+      <div class="metric trend-${metric.trend}${deemphasize}">
+        <span>${label}</span>
+        <strong>${metric.value}</strong>
+        <small>${metric.unit} · ${metric.change}</small>
+      </div>
+    `;
+  }).join("");
 }
 
 function renderNodes() {
@@ -255,32 +275,32 @@ function renderNodes() {
   els.resultCount.textContent = `${list.length} 个结果`;
   els.nodeCount.textContent = nodes.length;
   els.hotCount.textContent = nodes.filter((node) => node.priority === "hot").length;
+  if (els.dataUpdated) els.dataUpdated.textContent = datasetMeta.updatedAt || "未知";
+  if (els.dataSourceNote) els.dataSourceNote.textContent = datasetMeta.sourceNote || "自动更新数据";
 
   if (!list.some((node) => node.id === state.selected)) {
     state.selected = list[0]?.id || "";
   }
 
-  els.nodeGrid.innerHTML =
-    list
-      .map((node) => {
-        const stage = stages.find((item) => item.id === node.stage);
-        const active = state.selected === node.id ? " active" : "";
-        return `
-          <button class="node-card${active}" type="button" data-node="${node.id}">
-            <div class="card-top">
-              <span class="pill">${stage.name}</span>
-              <span class="status ${node.priority}">${statusText[node.priority]}</span>
-            </div>
-            <h3>${node.product}</h3>
-            <p>${node.signal}</p>
-            <div class="metrics">${metricMarkup(node)}</div>
-            <div class="tags">
-              ${node.regions.map((region) => `<span class="tag">${region}</span>`).join("")}
-            </div>
-          </button>
-        `;
-      })
-      .join("") || '<p class="empty">没有匹配的节点。换一个筛选条件试试。</p>';
+  els.nodeGrid.innerHTML = list.map((node) => {
+    const stage = stages.find((item) => item.id === node.stage);
+    const active = state.selected === node.id ? " active" : "";
+    return `
+      <button class="node-card${active}" type="button" data-node="${node.id}">
+        <div class="card-top">
+          <span class="pill">${stage.name}</span>
+          <span class="status ${node.priority}">${statusText[node.priority]}</span>
+        </div>
+        <h3>${node.product}</h3>
+        <p>${node.signal}</p>
+        <div class="metrics">${metricMarkup(node)}</div>
+        <div class="card-foot">
+          <span class="tag">置信度：${node.confidence}</span>
+          ${node.regions.map((region) => `<span class="tag">${region}</span>`).join("")}
+        </div>
+      </button>
+    `;
+  }).join("") || '<p class="empty">没有匹配的节点。换一个筛选条件试试。</p>';
 
   renderDetail();
 }
@@ -299,11 +319,26 @@ function renderDetail() {
     <p><strong>所属环节：</strong>${stage.name}</p>
     <p><strong>代表公司：</strong>${node.companies}</p>
     <p><strong>覆盖地区：</strong>${node.regions.join("、")}</p>
-    <p>${node.signal}</p>
-    <div class="detail-table">
-      <div><span>定价</span><strong>${node.metrics.price}</strong></div>
-      <div><span>库存</span><strong>${node.metrics.inventory}</strong></div>
-      <div><span>产能</span><strong>${node.metrics.capacity}</strong></div>
+    <p><strong>数据口径：</strong>当前为研究模板中的区间估算，用于展示追踪方法；接入真实数据源后应替换为来源日期、数值和链接。</p>
+    ${node.evidence?.length ? `
+      <h3>自动抓取证据</h3>
+      <ul class="questions evidence-list">
+        ${node.evidence.map((item) => `<li><a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a><br><span>${item.source || "公开来源"} · ${item.date || ""}</span></li>`).join("")}
+      </ul>
+    ` : ""}
+    <div class="detail-table quantitative">
+      ${Object.entries(metricNames).map(([key, label]) => {
+        const metric = node.metrics[key];
+        return `
+          <div class="trend-${metric.trend}">
+            <span>${label}</span>
+            <strong>${metric.value}</strong>
+            <small>${metric.unit}</small>
+            <b>${metric.change} · ${trendText[metric.trend]}</b>
+            <p>${metric.note}</p>
+          </div>
+        `;
+      }).join("")}
     </div>
     <h3>下一步要问的问题</h3>
     <ul class="questions">
@@ -318,10 +353,11 @@ function renderWatchlist() {
     return score[a.priority] - score[b.priority];
   });
 
-  els.watchlistItems.innerHTML = ordered
-    .slice(0, 7)
-    .map((node) => `<li><strong>${node.product}</strong><br><span>${node.signal}</span></li>`)
-    .join("");
+  els.watchlistItems.innerHTML = ordered.slice(0, 7).map((node) => {
+    const price = node.metrics.price;
+    const capacity = node.metrics.capacity;
+    return `<li><strong>${node.product}</strong><br><span>价格 ${price.value}（${price.change}）；产能 ${capacity.value}（${capacity.change}）</span></li>`;
+  }).join("");
 }
 
 function updateFiltersFromInputs() {
@@ -342,18 +378,26 @@ function selectStage(stageId) {
 
 function exportCurrentCsv() {
   const rows = [
-    ["环节", "产品/工序", "代表公司", "地区", "优先级", "定价", "库存", "产能", "观察信号"],
+    ["更新日期", "环节", "产品/工序", "代表公司", "地区", "优先级", "置信度", "定价数值", "定价变化", "定价口径", "库存数值", "库存变化", "库存口径", "产能数值", "产能变化", "产能口径", "观察信号"],
     ...filteredNodes().map((node) => {
       const stage = stages.find((item) => item.id === node.stage);
       return [
+        datasetMeta.updatedAt,
         stage.name,
         node.product,
         node.companies,
         node.regions.join("/"),
         statusText[node.priority],
-        node.metrics.price,
-        node.metrics.inventory,
-        node.metrics.capacity,
+        node.confidence,
+        `${node.metrics.price.value} ${node.metrics.price.unit}`,
+        node.metrics.price.change,
+        node.metrics.price.note,
+        `${node.metrics.inventory.value} ${node.metrics.inventory.unit}`,
+        node.metrics.inventory.change,
+        node.metrics.inventory.note,
+        `${node.metrics.capacity.value} ${node.metrics.capacity.unit}`,
+        node.metrics.capacity.change,
+        node.metrics.capacity.note,
         node.signal,
       ];
     }),
@@ -393,7 +437,30 @@ els.summaryMode.addEventListener("click", () => {
 
 els.exportCsv.addEventListener("click", exportCurrentCsv);
 
-buildOptions();
-renderChainMap();
-renderNodes();
-renderWatchlist();
+async function loadRemoteData() {
+  try {
+    const response = await fetch("data/latest.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    if (!Array.isArray(payload.nodes) || payload.nodes.length === 0) return;
+    nodes = payload.nodes;
+    datasetMeta = {
+      updatedAt: payload.updatedAt || datasetMeta.updatedAt,
+      mode: payload.mode || "auto",
+      sourceNote: payload.sourceNote || "GitHub Actions 自动更新",
+    };
+    state.selected = nodes[0]?.id || "";
+  } catch (error) {
+    console.info("Using embedded fallback data.", error);
+  }
+}
+
+async function initialize() {
+  await loadRemoteData();
+  buildOptions();
+  renderChainMap();
+  renderNodes();
+  renderWatchlist();
+}
+
+initialize();

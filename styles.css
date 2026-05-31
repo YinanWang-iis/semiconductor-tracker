@@ -290,7 +290,7 @@ select {
 
 .card-top,
 .metrics,
-.tags {
+.card-foot {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -348,12 +348,13 @@ select {
 }
 
 .metric {
-  flex: 1 1 86px;
-  min-width: 86px;
+  flex: 1 1 118px;
+  min-width: 118px;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 9px;
   background: #fbfcfc;
+  box-shadow: inset 4px 0 0 #ccd8d5;
 }
 
 .metric span {
@@ -364,8 +365,34 @@ select {
 }
 
 .metric strong {
+  display: block;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.metric small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.trend-up {
+  box-shadow: inset 4px 0 0 var(--red);
+}
+
+.trend-down {
+  box-shadow: inset 4px 0 0 var(--green);
+}
+
+.trend-flat {
+  box-shadow: inset 4px 0 0 var(--blue);
+}
+
+.muted-metric {
+  opacity: 0.56;
 }
 
 .detail-layout {
@@ -391,6 +418,7 @@ select {
   border-radius: 8px;
   padding: 14px;
   background: #fbfcfc;
+  box-shadow: inset 4px 0 0 #ccd8d5;
 }
 
 .detail-table span {
@@ -403,6 +431,28 @@ select {
 .detail-table strong {
   display: block;
   margin-top: 5px;
+  font-size: 24px;
+}
+
+.detail-table small,
+.detail-table b {
+  display: block;
+}
+
+.detail-table small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.detail-table b {
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+.detail-table p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .questions {
@@ -456,10 +506,10 @@ select {
 }
 
 body.summary .node-card {
-  min-height: 210px;
+  min-height: 240px;
 }
 
-body.summary .tags,
+body.summary .card-foot,
 body.summary .node-card p {
   display: none;
 }

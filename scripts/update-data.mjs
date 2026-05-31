@@ -1,0 +1,157 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+
+const seed = JSON.parse(await readFile("data/seed.json", "utf8"));
+const now = new Date();
+
+const metricKeywords = {
+  price: ["price", "pricing", "ASP", "contract", "quote", "margin", "cost", "涨价", "价格", "报价"],
+  inventory: ["inventory", "stock", "channel", "shortage", "oversupply", "lead time", "库存", "缺货", "交期"],
+  capacity: ["capacity", "capex", "production", "fab", "expansion", "ramp", "utilization", "产能", "扩产", "投产", "稼动率"],
+};
+
+function gdeltUrl(query) {
+  const params = new URLSearchParams({
+    query,
+    mode: "ArtList",
+    format: "json",
+    maxrecords: "12",
+    sort: "HybridRel",
+    timespan: "7d",
+  });
+  return `https://api.gdeltproject.org/api/v2/doc/doc?${params}`;
+}
+
+async function fetchArticles(query) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(gdeltUrl(query), {
+      signal: controller.signal,
+      headers: { "user-agent": "semiconductor-tracker/1.0" },
+    });
+    if (!response.ok) return [];
+    const payload = await response.json();
+    return (payload.articles || []).map((article) => ({
+      title: article.title || "Untitled",
+      url: article.url,
+      source: article.sourceCountry || article.domain || "GDELT",
+      date: article.seendate ? article.seendate.slice(0, 8) : "",
+      snippet: article.title || "",
+    })).filter((article) => article.url);
+  } catch {
+    return [];
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function scoreMetric(articles, metricKey) {
+  const keywords = metricKeywords[metricKey];
+  return articles.reduce((count, article) => {
+    const text = `${article.title} ${article.snippet}`.toLowerCase();
+    return count + keywords.filter((keyword) => text.includes(keyword.toLowerCase())).length;
+  }, 0);
+}
+
+function priorityFromEvidence(basePriority, evidenceCount) {
+  if (evidenceCount >= 7) return "hot";
+  if (evidenceCount >= 3 && basePriority === "steady") return "watch";
+  return basePriority;
+}
+
+function confidenceFromEvidence(evidenceCount) {
+  if (evidenceCount >= 7) return "中";
+  if (evidenceCount >= 3) return "低-中";
+  return "低";
+}
+
+function enrichMetric(metric, articles, metricKey) {
+  const hits = scoreMetric(articles, metricKey);
+  const note = hits > 0
+    ? `${metric.note} 过去7天自动抓取到 ${hits} 个相关新闻信号。`
+    : `${metric.note} 过去7天未抓取到明显相关新闻信号。`;
+  return { ...metric, note };
+}
+
+function responseText(payload) {
+  if (typeof payload.output_text === "string") return payload.output_text;
+  return (payload.output || [])
+    .flatMap((item) => item.content || [])
+    .map((content) => content.text || "")
+    .join("\n")
+    .trim();
+}
+
+async function aiExtract(node, articles) {
+  if (!process.env.OPENAI_API_KEY || articles.length === 0) return null;
+
+  const evidenceText = articles.slice(0, 8).map((article, index) =>
+    `${index + 1}. ${article.title}\nURL: ${article.url}\nDate: ${article.date || "unknown"}`
+  ).join("\n\n");
+
+  const prompt = `
+你是半导体产业链研究助理。请只根据下面的公开新闻标题和链接，判断它们对产业链节点的影响。
+节点：${node.product}
+公司：${node.companies}
+
+新闻证据：
+${evidenceText}
+
+请输出严格 JSON，不要 Markdown：
+{
+  "signal": "一句中文摘要",
+  "confidence": "低|低-中|中|高",
+  "priceNote": "定价相关判断，无法判断则写未见明确价格信号",
+  "inventoryNote": "库存相关判断，无法判断则写未见明确库存信号",
+  "capacityNote": "产能相关判断，无法判断则写未见明确产能信号"
+}
+`;
+
+  try {
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || "gpt-4.1-mini",
+        input: prompt,
+      }),
+    });
+    if (!response.ok) return null;
+    const text = responseText(await response.json());
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+const nodes = [];
+for (const node of seed.nodes) {
+  const articles = await fetchArticles(node.query);
+  const evidence = articles.slice(0, 5).map(({ title, url, source, date }) => ({ title, url, source, date }));
+  const ai = await aiExtract(node, articles);
+  nodes.push({
+    ...node,
+    priority: priorityFromEvidence(node.priority, evidence.length),
+    confidence: ai?.confidence || confidenceFromEvidence(evidence.length),
+    signal: ai?.signal || node.signal,
+    evidence,
+    metrics: {
+      price: { ...enrichMetric(node.metrics.price, articles, "price"), note: ai?.priceNote || enrichMetric(node.metrics.price, articles, "price").note },
+      inventory: { ...enrichMetric(node.metrics.inventory, articles, "inventory"), note: ai?.inventoryNote || enrichMetric(node.metrics.inventory, articles, "inventory").note },
+      capacity: { ...enrichMetric(node.metrics.capacity, articles, "capacity"), note: ai?.capacityNote || enrichMetric(node.metrics.capacity, articles, "capacity").note },
+    },
+  });
+}
+
+await mkdir("data", { recursive: true });
+await writeFile("data/latest.json", JSON.stringify({
+  updatedAt: now.toISOString().slice(0, 10),
+  mode: "auto-public-sources",
+  sourceNote: process.env.OPENAI_API_KEY
+    ? "GitHub Actions 每日自动更新；公开新闻证据 + AI 摘要 + 种子量化口径"
+    : "GitHub Actions 每日自动更新；公开新闻证据 + 关键词规则 + 种子量化口径",
+  nodes,
+}, null, 2));
