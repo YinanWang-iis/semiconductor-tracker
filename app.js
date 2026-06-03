@@ -220,6 +220,10 @@ const els = {
   sourceManagerGrid: document.querySelector("#sourceManagerGrid"),
   stocksGrid: document.querySelector("#stocksGrid"),
   stocksUpdated: document.querySelector("#stocksUpdated"),
+  chainFlow: document.querySelector("#chainFlow"),
+  metricHeatmap: document.querySelector("#metricHeatmap"),
+  riskChart: document.querySelector("#riskChart"),
+  metricBars: document.querySelector("#metricBars"),
   viewTabs: document.querySelectorAll("[data-view-tab]"),
   viewSections: document.querySelectorAll("[data-view]"),
   pinnedOnly: document.querySelector("#pinnedOnly"),
@@ -274,6 +278,97 @@ function metricMidpoint(value) {
   if (!nums.length) return 50;
   if (nums.length === 1) return nums[0];
   return (nums[0] + nums[1]) / 2;
+}
+
+function metricScore(node, metricKey) {
+  const metric = node.metrics[metricKey];
+  const base = metricMidpoint(metric.value);
+  const trendBonus = metric.trend === "up" ? 18 : metric.trend === "down" ? -8 : 3;
+  const evidenceBonus = Math.min(15, (node.evidence?.length || 0) * 3);
+  return Math.max(0, Math.min(100, Math.round(base + trendBonus + evidenceBonus)));
+}
+
+function heatClass(score) {
+  if (score >= 75) return "heat-high";
+  if (score >= 52) return "heat-mid";
+  return "heat-low";
+}
+
+function renderChainVisuals(list = filteredNodes()) {
+  renderChainFlow(list);
+  renderMetricHeatmap(list);
+  renderRiskChart(list);
+  renderMetricBars(list);
+}
+
+function renderChainFlow(list) {
+  if (!els.chainFlow) return;
+  els.chainFlow.innerHTML = stages.map((stage, index) => {
+    const stageNodes = list.filter((node) => node.stage === stage.id);
+    const hot = stageNodes.filter((node) => node.priority === "hot").length;
+    const score = stageNodes.length ? Math.round(stageNodes.reduce((sum, node) => sum + metricScore(node, "capacity"), 0) / stageNodes.length) : 0;
+    return `
+      <button type="button" class="flow-stage ${state.stage === stage.id ? "active" : ""}" data-stage="${stage.id}">
+        <span>${index + 1}</span>
+        <strong>${stage.name}</strong>
+        <small>${stageNodes.length} 节点 · ${hot} 高优先级</small>
+        <b style="width:${Math.max(8, score)}%"></b>
+      </button>
+    `;
+  }).join("");
+}
+
+function renderMetricHeatmap(list) {
+  if (!els.metricHeatmap) return;
+  const rows = stages.map((stage) => {
+    const stageNodes = list.filter((node) => node.stage === stage.id);
+    const cells = Object.keys(metricNames).map((metricKey) => {
+      const score = stageNodes.length
+        ? Math.round(stageNodes.reduce((sum, node) => sum + metricScore(node, metricKey), 0) / stageNodes.length)
+        : 0;
+      return `<div class="heat-cell ${heatClass(score)}"><span>${metricNames[metricKey]}</span><strong>${score}</strong></div>`;
+    }).join("");
+    return `<article><strong>${stage.name}</strong><div>${cells}</div></article>`;
+  }).join("");
+  els.metricHeatmap.innerHTML = rows;
+}
+
+function renderRiskChart(list) {
+  if (!els.riskChart) return;
+  const counts = {
+    hot: list.filter((node) => node.priority === "hot").length,
+    watch: list.filter((node) => node.priority === "watch").length,
+    steady: list.filter((node) => node.priority === "steady").length,
+  };
+  const max = Math.max(...Object.values(counts), 1);
+  els.riskChart.innerHTML = Object.entries(counts).map(([key, value]) => `
+    <div class="risk-row ${key}">
+      <span>${statusText[key]}</span>
+      <b style="width:${Math.max(6, Math.round((value / max) * 100))}%"></b>
+      <strong>${value}</strong>
+    </div>
+  `).join("");
+}
+
+function renderMetricBars(list) {
+  if (!els.metricBars) return;
+  const sorted = [...list].sort((a, b) => {
+    const aScore = metricScore(a, "price") + metricScore(a, "inventory") + metricScore(a, "capacity");
+    const bScore = metricScore(b, "price") + metricScore(b, "inventory") + metricScore(b, "capacity");
+    return bScore - aScore;
+  }).slice(0, 8);
+
+  els.metricBars.innerHTML = sorted.map((node) => `
+    <button type="button" class="metric-bar-row" data-node="${node.id}">
+      <strong>${node.product}</strong>
+      <div>
+        ${Object.keys(metricNames).map((metricKey) => {
+          const score = metricScore(node, metricKey);
+          return `<span class="${heatClass(score)}" style="width:${score}%">${metricNames[metricKey]} ${score}</span>`;
+        }).join("")}
+      </div>
+    </button>
+  `).join("");
 }
 
 function getHistory(node, metricKey) {
@@ -411,6 +506,7 @@ function renderNodes() {
   }).join("") || '<p class="empty">没有匹配的节点。换一个筛选条件试试。</p>';
 
   renderDetail();
+  renderChainVisuals(list);
   renderBriefing();
   renderAlerts();
   renderSourceManager();
@@ -620,6 +716,18 @@ els.searchInput.addEventListener("input", updateFiltersFromInputs);
 els.chainMap.addEventListener("click", (event) => {
   const button = event.target.closest("[data-stage]");
   if (button) selectStage(button.dataset.stage);
+});
+
+els.chainFlow?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-stage]");
+  if (button) selectStage(button.dataset.stage);
+});
+
+els.metricBars?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-node]");
+  if (!button) return;
+  state.selected = button.dataset.node;
+  renderNodes();
 });
 
 els.nodeGrid.addEventListener("click", (event) => {
