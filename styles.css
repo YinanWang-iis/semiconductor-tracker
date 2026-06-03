@@ -334,6 +334,34 @@ select {
 
 .stocks-grid {
   display: grid;
+  gap: 18px;
+}
+
+.stock-market-group {
+  display: grid;
+  gap: 10px;
+}
+
+.market-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.market-heading strong {
+  font-size: 18px;
+}
+
+.market-heading span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.stock-market-grid {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
@@ -341,7 +369,7 @@ select {
 .stock-card {
   display: grid;
   gap: 7px;
-  min-height: 132px;
+  min-height: 184px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfcfc;
@@ -371,6 +399,36 @@ select {
 .stock-card b {
   font-size: 22px;
   line-height: 1.1;
+}
+
+.stock-sparkline {
+  width: 100%;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.stock-sparkline polyline {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2.2;
+}
+
+.stock-sparkline.spark-up polyline {
+  stroke: var(--red);
+}
+
+.stock-sparkline.spark-down polyline {
+  stroke: var(--green);
+}
+
+.empty-line {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .stock-up {
@@ -883,7 +941,7 @@ body.summary .node-grid {
   .detail-layout,
   .briefing-layout,
   .trend-grid,
-  .stocks-grid,
+  .stock-market-grid,
   .settings-grid,
   .source-grid {
     grid-template-columns: 1fr 1fr;
@@ -915,7 +973,7 @@ body.summary .node-grid {
   .detail-table,
   .briefing-layout,
   .trend-grid,
-  .stocks-grid,
+  .stock-market-grid,
   .source-manager-grid,
   .settings-grid,
   .source-grid,

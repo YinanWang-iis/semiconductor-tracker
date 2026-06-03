@@ -16,10 +16,10 @@ G:\semiconductor_tracker\index.html
 - 按产品节点追踪：AI GPU、HBM、CoWoS、光模块、NAND、DRAM、先进制程、材料、设备等。
 - 每个节点统一看三类变化：定价、库存、产能，并展示区间值、单位、QoQ/YoY变化和数据口径。
 - 支持按地区、环节、指标和关键词筛选。
-- 支持“父亲摘要模式”，减少干扰信息。
+- 支持“摘要模式”，减少干扰信息。
 - 支持导出当前筛选结果为 CSV。
 - GitHub Actions 每天自动生成 `data/latest.json`，网页会优先读取这份自动数据。
-- 父亲每日简报：自动给出今天优先看的节点和主要驱动。
+- 每日简报：自动给出今天优先看的节点和主要驱动。
 - 变化提醒：用红黄绿标记价格、库存、产能或新闻密度变化。
 - 来源可信度：把自动抓取证据区分为公司官方、行业机构、专业媒体、一般媒体。
 - 历史趋势图：每个节点展示价格、库存、产能的90天趋势小图。
@@ -27,7 +27,7 @@ G:\semiconductor_tracker\index.html
 - 影响链条：展示一个节点可能传导影响到哪些上下游节点。
 - 自定义关注清单：可把重点节点加入关注，首页简报优先围绕关注节点生成。
 - 数据源管理：显示每个节点的自动搜索关键词、证据数量和来源类型。
-- 相关公司股市信息：展示产业链代表公司的股价、涨跌幅、交易所和对应产业链节点。
+- 相关公司股市信息：按美股、日股、A股、台股分组展示代表公司的股价、涨跌幅、交易所、对应产业链节点和近60个交易日走势。
 
 ## 自动更新机制
 
@@ -39,7 +39,7 @@ G:\semiconductor_tracker\index.html
 
 默认情况下，脚本使用公开新闻证据和关键词规则更新。如果你在 GitHub 仓库的 `Settings → Secrets and variables → Actions` 里添加 `OPENAI_API_KEY`，脚本会额外调用 AI 生成中文摘要，并分别判断定价、库存、产能信号。
 
-股市信息由 `scripts/update-stocks.mjs` 生成 `data/stocks.json`。默认使用 Yahoo Finance chart 的公开非官方接口，适合原型和延迟行情观察；如果你在 GitHub Secrets 里添加 `FINNHUB_API_KEY`，脚本会优先使用 Finnhub，再回退 Yahoo。生产级、实时、稳定、合规、多市场覆盖的行情通常需要付费 API。
+股市信息由 `scripts/update-stocks.mjs` 生成 `data/stocks.json`。默认使用 Yahoo Finance chart 的公开非官方接口，适合原型和延迟行情观察；它可以返回日线 OHLC 数据，因此可以画走势图或 K 线图。如果你在 GitHub Secrets 里添加 `FINNHUB_API_KEY`，脚本会优先使用 Finnhub 获取美股报价，同时仍保留 Yahoo 日线历史作为走势图来源。生产级、实时、稳定、合规、多市场覆盖的行情通常需要付费 API。
 
 当前计划任务是 UTC 21:20 运行，也就是日本时间每天 06:20 左右。
 

@@ -718,6 +718,40 @@ function formatChange(stock) {
   return `${sign}${stock.changePercent}%`;
 }
 
+function renderStockSparkline(history = []) {
+  const closes = history.map((row) => row.close).filter((value) => typeof value === "number");
+  if (closes.length < 2) return '<div class="stock-sparkline empty-line">等待K线</div>';
+  const min = Math.min(...closes);
+  const max = Math.max(...closes);
+  const spread = max - min || 1;
+  const points = closes.map((close, index) => {
+    const x = (index / (closes.length - 1)) * 100;
+    const y = 34 - ((close - min) / spread) * 30 + 2;
+    return `${x.toFixed(2)},${y.toFixed(2)}`;
+  }).join(" ");
+  const direction = closes.at(-1) >= closes[0] ? "up" : "down";
+  return `
+    <svg class="stock-sparkline spark-${direction}" viewBox="0 0 100 38" role="img" aria-label="近60个交易日走势">
+      <polyline points="${points}" vector-effect="non-scaling-stroke"></polyline>
+    </svg>
+  `;
+}
+
+function marketGroups(stocks) {
+  const order = [
+    ["us", "美股"],
+    ["jp", "日股"],
+    ["cn", "A股"],
+    ["tw", "台股"],
+    ["other", "其他"],
+  ];
+  return order.map(([key, label]) => ({
+    key,
+    label,
+    stocks: stocks.filter((stock) => (stock.market || "other") === key),
+  })).filter((group) => group.stocks.length);
+}
+
 function renderStocks() {
   if (!els.stocksGrid) return;
   els.stocksUpdated.textContent = stockData.updatedAt ? `行情 ${stockData.updatedAt}` : "等待更新";
@@ -726,21 +760,32 @@ function renderStocks() {
     return;
   }
 
-  els.stocksGrid.innerHTML = stockData.stocks.map((stock) => {
-    const direction = stock.changePercent == null ? "flat" : stock.changePercent > 0 ? "up" : stock.changePercent < 0 ? "down" : "flat";
-    const linked = nodes.find((node) => node.id === stock.linkNode || node.stage === stock.linkNode);
-    return `
-      <button type="button" class="stock-card stock-${direction}" data-node="${linked?.id || ""}">
-        <div>
-          <strong>${stock.name}</strong>
-          <span>${stock.symbol} · ${stock.region}</span>
-        </div>
-        <b>${formatPrice(stock)}</b>
-        <small>${formatChange(stock)} · ${stock.exchange || stock.quoteSource || "公开源"}</small>
-        <em>${linked ? linked.product : "产业链观察"}</em>
-      </button>
-    `;
-  }).join("");
+  els.stocksGrid.innerHTML = marketGroups(stockData.stocks).map((group) => `
+    <section class="stock-market-group">
+      <div class="market-heading">
+        <strong>${group.label}</strong>
+        <span>${group.stocks.length} 个标的</span>
+      </div>
+      <div class="stock-market-grid">
+        ${group.stocks.map((stock) => {
+          const direction = stock.changePercent == null ? "flat" : stock.changePercent > 0 ? "up" : stock.changePercent < 0 ? "down" : "flat";
+          const linked = nodes.find((node) => node.id === stock.linkNode || node.stage === stock.linkNode);
+          return `
+            <button type="button" class="stock-card stock-${direction}" data-node="${linked?.id || ""}">
+              <div>
+                <strong>${stock.name}</strong>
+                <span>${stock.symbol} · ${stock.region}</span>
+              </div>
+              <b>${formatPrice(stock)}</b>
+              <small>${formatChange(stock)} · ${stock.exchange || stock.quoteSource || "公开源"}</small>
+              ${renderStockSparkline(stock.history)}
+              <em>${linked ? linked.product : "产业链观察"}</em>
+            </button>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `).join("");
 }
 
 async function initialize() {

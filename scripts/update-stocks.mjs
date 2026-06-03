@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 const seed = JSON.parse(await readFile("data/stocks-seed.json", "utf8"));
 
 async function fetchYahooQuote(symbol) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=3mo&interval=1d`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
@@ -17,7 +17,16 @@ async function fetchYahooQuote(symbol) {
     if (!result) throw new Error("No chart result");
     const meta = result.meta || {};
     const quote = result.indicators?.quote?.[0] || {};
-    const closes = (quote.close || []).filter((value) => typeof value === "number");
+    const timestamps = result.timestamp || [];
+    const history = timestamps.map((timestamp, index) => ({
+      date: new Date(timestamp * 1000).toISOString().slice(0, 10),
+      open: quote.open?.[index] ?? null,
+      high: quote.high?.[index] ?? null,
+      low: quote.low?.[index] ?? null,
+      close: quote.close?.[index] ?? null,
+      volume: quote.volume?.[index] ?? null,
+    })).filter((row) => typeof row.close === "number");
+    const closes = history.map((row) => row.close);
     const current = typeof meta.regularMarketPrice === "number" ? meta.regularMarketPrice : closes.at(-1);
     const previous = typeof meta.chartPreviousClose === "number" ? meta.chartPreviousClose : closes.at(-2);
     const change = current != null && previous ? current - previous : null;
@@ -30,6 +39,7 @@ async function fetchYahooQuote(symbol) {
       currency: meta.currency || "",
       exchange: meta.exchangeName || meta.fullExchangeName || "",
       marketTime: meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : "",
+      history: history.slice(-60),
       source: "Yahoo Finance chart",
       ok: true,
     };
@@ -42,6 +52,7 @@ async function fetchYahooQuote(symbol) {
       currency: "",
       exchange: "",
       marketTime: "",
+      history: [],
       source: "Yahoo Finance chart",
       ok: false,
       error: error.message,
@@ -67,6 +78,7 @@ async function fetchFinnhubQuote(symbol) {
       currency: "USD",
       exchange: "US",
       marketTime: payload.t ? new Date(payload.t * 1000).toISOString() : "",
+      history: [],
       source: "Finnhub",
       ok: true,
     };
@@ -81,8 +93,9 @@ function round(value, digits = 2) {
 
 const stocks = [];
 for (const item of seed) {
+  const yahooQuote = await fetchYahooQuote(item.yahoo || item.symbol);
   const finnhub = /^[A-Z.]+$/.test(item.symbol) ? await fetchFinnhubQuote(item.symbol) : null;
-  const quote = finnhub || await fetchYahooQuote(item.yahoo || item.symbol);
+  const quote = finnhub ? { ...yahooQuote, ...finnhub, history: yahooQuote.history || [] } : yahooQuote;
   stocks.push({
     ...item,
     price: round(quote.price),
@@ -92,6 +105,7 @@ for (const item of seed) {
     currency: quote.currency,
     exchange: quote.exchange,
     marketTime: quote.marketTime,
+    history: quote.history || [],
     quoteSource: quote.source,
     ok: quote.ok,
     error: quote.error || "",
