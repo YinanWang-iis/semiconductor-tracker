@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19",
+  "updatedAt": "2026-06-20",
   "source": "yahoo-chart",
   "sourceNote": "Yahoo Finance chart 非官方公开接口；可能为延迟行情",
   "stocks": [
@@ -10039,7 +10039,7 @@
       "changePercent": 76.58,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-06-18T20:00:01.000Z",
+      "marketTime": "2026-06-18T20:00:02.000Z",
       "history": [
         {
           "date": "2026-03-25",
@@ -10540,7 +10540,7 @@
       "changePercent": 73.13,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-06-18T20:00:01.000Z",
+      "marketTime": "2026-06-18T20:00:02.000Z",
       "history": [
         {
           "date": "2026-03-25",
@@ -11041,7 +11041,7 @@
       "changePercent": 75.1,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-06-18T20:00:01.000Z",
+      "marketTime": "2026-06-18T20:00:02.000Z",
       "history": [
         {
           "date": "2026-03-25",
@@ -16556,14 +16556,6 @@
       "marketTime": "2026-06-19T06:45:03.000Z",
       "history": [
         {
-          "date": "2026-03-19",
-          "open": 54287.80078125,
-          "high": 54333.01953125,
-          "low": 53190.1796875,
-          "close": 53372.53125,
-          "volume": 200600000
-        },
-        {
           "date": "2026-03-23",
           "open": 52468.71875,
           "high": 52479.80859375,
@@ -17034,6 +17026,14 @@
           "low": 68985.6328125,
           "close": 69902.25,
           "volume": 144300000
+        },
+        {
+          "date": "2026-06-19",
+          "open": 71551.03125,
+          "high": 71952.9921875,
+          "low": 70517.9765625,
+          "close": 71250.0625,
+          "volume": 214400000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -26092,7 +26092,7 @@
       "changePercent": 71.47,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-06-18T05:30:09.000Z",
+      "marketTime": "2026-06-18T05:30:10.000Z",
       "history": [
         {
           "date": "2026-03-24",
@@ -29098,7 +29098,7 @@
       "changePercent": 23.75,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-06-18T05:30:04.000Z",
+      "marketTime": "2026-06-18T05:30:05.000Z",
       "history": [
         {
           "date": "2026-03-24",
@@ -30101,7 +30101,7 @@
       "changePercent": 0.68,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-06-18T07:00:24.000Z",
+      "marketTime": "2026-06-18T07:00:25.000Z",
       "history": [
         {
           "date": "2026-03-20",
@@ -36114,7 +36114,7 @@
       "changePercent": 71.45,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-06-18T07:00:04.000Z",
+      "marketTime": "2026-06-18T07:00:05.000Z",
       "history": [
         {
           "date": "2026-03-23",
