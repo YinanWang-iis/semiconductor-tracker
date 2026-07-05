@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04",
+  "updatedAt": "2026-07-05",
   "source": "yahoo-chart",
   "sourceNote": "Yahoo Finance chart 非官方公开接口；可能为延迟行情",
   "stocks": [
@@ -4006,7 +4006,7 @@
           "high": 358.489990234375,
           "low": 309.739990234375,
           "close": 315.2799987792969,
-          "volume": 7576000
+          "volume": 7553900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -6010,7 +6010,7 @@
           "high": 285.94000244140625,
           "low": 267.54998779296875,
           "close": 273.3599853515625,
-          "volume": 5660800
+          "volume": 5659500
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -7513,7 +7513,7 @@
           "high": 77.58999633789062,
           "low": 68.48999786376953,
           "close": 69.83999633789062,
-          "volume": 3796900
+          "volume": 3792500
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -12523,7 +12523,7 @@
           "high": 351.79998779296875,
           "low": 296.54998779296875,
           "close": 307.5799865722656,
-          "volume": 1968000
+          "volume": 1966900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -13024,7 +13024,7 @@
           "high": 116.6500015258789,
           "low": 94.72000122070312,
           "close": 97.7699966430664,
-          "volume": 2944300
+          "volume": 2937900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -14026,7 +14026,7 @@
           "high": 803.9000244140625,
           "low": 710.010009765625,
           "close": 728.3200073242188,
-          "volume": 5229100
+          "volume": 5217800
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -16030,7 +16030,7 @@
           "high": 422.54998779296875,
           "low": 386.010009765625,
           "close": 394.32000732421875,
-          "volume": 6618400
+          "volume": 6611600
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -16531,7 +16531,7 @@
           "high": 43.935001373291016,
           "low": 40.71500015258789,
           "close": 41.22999954223633,
-          "volume": 18976700
+          "volume": 18968400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
