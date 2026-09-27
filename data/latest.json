@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26",
+  "updatedAt": "2026-09-27",
   "mode": "auto-public-sources",
   "sourceNote": "GitHub Actions 每日自动更新；公开新闻证据 + 关键词规则 + 种子量化口径",
   "nodes": [
@@ -738,7 +738,7 @@
           "unit": "每片晶圆",
           "change": "+3% QoQ",
           "trend": "up",
-          "note": "先进节点等效晶圆报价区间估算，节点和客户差异很大。 过去7天未抓取到明显相关新闻信号。"
+          "note": "先进节点等效晶圆报价区间估算，节点和客户差异很大。 过去7天自动抓取到 1 个相关新闻信号。"
         },
         "inventory": {
           "value": "80-95",
@@ -763,12 +763,20 @@
       ],
       "alerts": [
         {
-          "level": "green",
-          "label": "暂无明显新增",
-          "text": "过去7天公开来源信号较少。"
+          "level": "yellow",
+          "label": "价格信号",
+          "text": "公开来源出现定价、报价或ASP相关信息。"
         }
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "title": "TSMC Sets 2027 Chip Price Floor at 3 - 6 %: AI Orders Could Pay Triple That",
+          "url": "https://www.techtimes.com/articles/327980/20260924/tsmc-sets-2027-chip-price-floor-3-6-ai-orders-could-pay-triple-that.htm",
+          "source": "techtimes.com",
+          "date": "20260924",
+          "credibility": "一般媒体"
+        }
+      ],
       "history": {
         "price": [
           {
