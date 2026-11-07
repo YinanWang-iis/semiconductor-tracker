@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-07",
   "source": "yahoo-chart",
   "sourceNote": "Yahoo Finance chart 非官方公开接口；可能为延迟行情",
   "stocks": [
@@ -12,22 +12,14 @@
       "linkNode": "gpu-ai",
       "yahoo": "^SOX",
       "kind": "index",
-      "price": 9011.14,
-      "previousClose": 12008.88,
-      "change": -2997.74,
-      "changePercent": -24.96,
+      "price": 9390.25,
+      "previousClose": 12048.69,
+      "change": -2658.44,
+      "changePercent": -22.06,
       "currency": "USD",
       "exchange": "NIM",
-      "marketTime": "2026-11-05T22:15:59.000Z",
+      "marketTime": "2026-11-06T22:15:59.000Z",
       "history": [
-        {
-          "date": "2026-08-13",
-          "open": 12413.9697265625,
-          "high": 12704.3798828125,
-          "low": 12398.8203125,
-          "close": 12456,
-          "volume": 0
-        },
         {
           "date": "2026-08-14",
           "open": 12440.5,
@@ -494,10 +486,18 @@
         },
         {
           "date": "2026-11-05",
-          "open": 9806.3115234375,
-          "high": 9838.130859375,
-          "low": 8997.3857421875,
-          "close": 9011.1376953125,
+          "open": 9806.3095703125,
+          "high": 9838.1298828125,
+          "low": 8997.3896484375,
+          "close": 9011.1396484375,
+          "volume": 0
+        },
+        {
+          "date": "2026-11-06",
+          "open": 9495.2119140625,
+          "high": 9627.26171875,
+          "low": 9221.349609375,
+          "close": 9390.25,
           "volume": 0
         }
       ],
@@ -514,22 +514,14 @@
       "linkNode": "demand",
       "yahoo": "^NDX",
       "kind": "index",
-      "price": 26629.81,
-      "previousClose": 29487.79,
-      "change": -2857.98,
-      "changePercent": -9.69,
+      "price": 26989.99,
+      "previousClose": 29373.33,
+      "change": -2383.34,
+      "changePercent": -8.11,
       "currency": "USD",
       "exchange": "NIM",
-      "marketTime": "2026-11-05T22:15:59.000Z",
+      "marketTime": "2026-11-06T22:15:59.000Z",
       "history": [
-        {
-          "date": "2026-08-13",
-          "open": 29784.060546875,
-          "high": 30168.05078125,
-          "low": 29757.619140625,
-          "close": 30084.5,
-          "volume": 8380820000
-        },
         {
           "date": "2026-08-14",
           "open": 30167.130859375,
@@ -996,11 +988,19 @@
         },
         {
           "date": "2026-11-05",
-          "open": 28078.185546875,
-          "high": 28078.185546875,
-          "low": 26606.427734375,
-          "close": 26629.80859375,
-          "volume": 2617404000
+          "open": 28078.189453125,
+          "high": 28078.189453125,
+          "low": 26606.4296875,
+          "close": 26629.810546875,
+          "volume": 12833900000
+        },
+        {
+          "date": "2026-11-06",
+          "open": 27045.255859375,
+          "high": 27316.09375,
+          "low": 26887.693359375,
+          "close": 26989.9921875,
+          "volume": 1625977000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -1015,22 +1015,14 @@
       "region": "美国",
       "linkNode": "gpu-ai",
       "yahoo": "NVDA",
-      "price": 181.6,
-      "previousClose": 219.22,
-      "change": -37.62,
-      "changePercent": -17.16,
+      "price": 186.64,
+      "previousClose": 218.99,
+      "change": -32.35,
+      "changePercent": -14.77,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 221.0399932861328,
-          "high": 225.10000610351562,
-          "low": 220.1999969482422,
-          "close": 224.08999633789062,
-          "volume": 108783600
-        },
         {
           "date": "2026-08-13",
           "open": 225.05999755859375,
@@ -1502,6 +1494,14 @@
           "low": 199.67999267578125,
           "close": 200.1300048828125,
           "volume": 149033300
+        },
+        {
+          "date": "2026-11-05",
+          "open": 196.07000732421875,
+          "high": 196.25,
+          "low": 181.4600067138672,
+          "close": 181.60000610351562,
+          "volume": 306127800
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -1516,22 +1516,14 @@
       "region": "美国",
       "linkNode": "gpu-ai",
       "yahoo": "AMD",
-      "price": 404.4,
-      "previousClose": 482.05,
-      "change": -77.65,
-      "changePercent": -16.11,
+      "price": 449.04,
+      "previousClose": 489.28,
+      "change": -40.24,
+      "changePercent": -8.22,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 488.32000732421875,
-          "high": 491.69000244140625,
-          "low": 480.8800048828125,
-          "close": 482.92999267578125,
-          "volume": 18628300
-        },
         {
           "date": "2026-08-13",
           "open": 483,
@@ -2003,6 +1995,14 @@
           "low": 476.5,
           "close": 488.7799987792969,
           "volume": 50984800
+        },
+        {
+          "date": "2026-11-05",
+          "open": 452.5,
+          "high": 456.20001220703125,
+          "low": 402.1000061035156,
+          "close": 404.3999938964844,
+          "volume": 71237400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -2017,22 +2017,14 @@
       "region": "美国",
       "linkNode": "design",
       "yahoo": "AVGO",
-      "price": 291.53,
-      "previousClose": 418.28,
-      "change": -126.75,
-      "changePercent": -30.3,
+      "price": 293.69,
+      "previousClose": 420.57,
+      "change": -126.88,
+      "changePercent": -30.17,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 426.260009765625,
-          "high": 426.5,
-          "low": 414.6099853515625,
-          "close": 416.04998779296875,
-          "volume": 15859200
-        },
         {
           "date": "2026-08-13",
           "open": 415.80999755859375,
@@ -2504,6 +2496,14 @@
           "low": 321.739990234375,
           "close": 325.4800109863281,
           "volume": 23881800
+        },
+        {
+          "date": "2026-11-05",
+          "open": 311.8900146484375,
+          "high": 314,
+          "low": 290.1199951171875,
+          "close": 291.5299987792969,
+          "volume": 53835500
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -2518,22 +2518,14 @@
       "region": "美国",
       "linkNode": "design",
       "yahoo": "QCOM",
-      "price": 156.75,
-      "previousClose": 157.53,
-      "change": -0.78,
-      "changePercent": -0.5,
+      "price": 165.41,
+      "previousClose": 160.39,
+      "change": 5.02,
+      "changePercent": 3.13,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:00.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 166.88999938964844,
-          "high": 166.94000244140625,
-          "low": 161.07000732421875,
-          "close": 163.07000732421875,
-          "volume": 7731700
-        },
         {
           "date": "2026-08-13",
           "open": 163.33999633789062,
@@ -3005,6 +2997,14 @@
           "low": 162.75,
           "close": 173.19000244140625,
           "volume": 22267900
+        },
+        {
+          "date": "2026-11-05",
+          "open": 150.05999755859375,
+          "high": 160.8000030517578,
+          "low": 148.25,
+          "close": 156.75,
+          "volume": 40213100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -3019,22 +3019,14 @@
       "region": "美国",
       "linkNode": "design",
       "yahoo": "MRVL",
-      "price": 133.55,
-      "previousClose": 211.02,
-      "change": -77.47,
-      "changePercent": -36.71,
+      "price": 141.2,
+      "previousClose": 210.54,
+      "change": -69.34,
+      "changePercent": -32.93,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 225.89999389648438,
-          "high": 226.88999938964844,
-          "low": 216.8800048828125,
-          "close": 217.0800018310547,
-          "volume": 25134300
-        },
         {
           "date": "2026-08-13",
           "open": 217.67999267578125,
@@ -3506,6 +3498,14 @@
           "low": 154.77999877929688,
           "close": 159.8000030517578,
           "volume": 46568100
+        },
+        {
+          "date": "2026-11-05",
+          "open": 151.41000366210938,
+          "high": 152.14999389648438,
+          "low": 132.5399932861328,
+          "close": 133.5500030517578,
+          "volume": 66645300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -3520,22 +3520,14 @@
       "region": "英国/美国",
       "linkNode": "design",
       "yahoo": "ARM",
-      "price": 166.72,
-      "previousClose": 274.58,
-      "change": -107.86,
-      "changePercent": -39.28,
+      "price": 174.62,
+      "previousClose": 286.68,
+      "change": -112.06,
+      "changePercent": -39.09,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 279.9599914550781,
-          "high": 280.1600036621094,
-          "low": 266.5920104980469,
-          "close": 271.8699951171875,
-          "volume": 3368900
-        },
         {
           "date": "2026-08-13",
           "open": 266.989990234375,
@@ -4007,6 +3999,14 @@
           "low": 189.8800048828125,
           "close": 191.8000030517578,
           "volume": 8875100
+        },
+        {
+          "date": "2026-11-05",
+          "open": 172.0500030517578,
+          "high": 175.8300018310547,
+          "low": 163.1300048828125,
+          "close": 166.72000122070312,
+          "volume": 15412700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -4021,22 +4021,14 @@
       "region": "美国",
       "linkNode": "wafer-foundry",
       "yahoo": "TXN",
-      "price": 278.15,
-      "previousClose": 277.72,
-      "change": 0.43,
-      "changePercent": 0.15,
+      "price": 277.36,
+      "previousClose": 278.4,
+      "change": -1.04,
+      "changePercent": -0.37,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 289.5899963378906,
-          "high": 289.6199951171875,
-          "low": 276.3599853515625,
-          "close": 276.5899963378906,
-          "volume": 5904600
-        },
         {
           "date": "2026-08-13",
           "open": 277.1600036621094,
@@ -4508,6 +4500,14 @@
           "low": 303.8999938964844,
           "close": 311.489990234375,
           "volume": 10154100
+        },
+        {
+          "date": "2026-11-05",
+          "open": 301.9200134277344,
+          "high": 307,
+          "low": 277.8699951171875,
+          "close": 278.1499938964844,
+          "volume": 19201100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -4522,22 +4522,14 @@
       "region": "美国",
       "linkNode": "design",
       "yahoo": "ADI",
-      "price": 361.01,
-      "previousClose": 377.69,
-      "change": -16.68,
-      "changePercent": -4.42,
+      "price": 363.56,
+      "previousClose": 377.31,
+      "change": -13.75,
+      "changePercent": -3.64,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 396.2200012207031,
-          "high": 396.260009765625,
-          "low": 383.6099853515625,
-          "close": 384.42999267578125,
-          "volume": 2764300
-        },
         {
           "date": "2026-08-13",
           "open": 387.44000244140625,
@@ -5009,6 +5001,14 @@
           "low": 396.760009765625,
           "close": 406.239990234375,
           "volume": 5502600
+        },
+        {
+          "date": "2026-11-05",
+          "open": 387.25,
+          "high": 400.1499938964844,
+          "low": 360.1300048828125,
+          "close": 361.010009765625,
+          "volume": 13100900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -5023,22 +5023,14 @@
       "region": "美国",
       "linkNode": "wafer-foundry",
       "yahoo": "ON",
-      "price": 63.01,
-      "previousClose": 76.91,
-      "change": -13.9,
-      "changePercent": -18.07,
+      "price": 63.31,
+      "previousClose": 78.33,
+      "change": -15.02,
+      "changePercent": -19.18,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 84.33999633789062,
-          "high": 84.83999633789062,
-          "low": 82.51000213623047,
-          "close": 83.31999969482422,
-          "volume": 9816800
-        },
         {
           "date": "2026-08-13",
           "open": 82.87999725341797,
@@ -5510,6 +5502,14 @@
           "low": 68.61000061035156,
           "close": 71.23999786376953,
           "volume": 10785800
+        },
+        {
+          "date": "2026-11-05",
+          "open": 68.75,
+          "high": 70.29000091552734,
+          "low": 62.7599983215332,
+          "close": 63.0099983215332,
+          "volume": 26045700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -5524,22 +5524,14 @@
       "region": "欧洲/美国",
       "linkNode": "design",
       "yahoo": "NXPI",
-      "price": 244.43,
-      "previousClose": 231.15,
-      "change": 13.28,
-      "changePercent": 5.75,
+      "price": 248.29,
+      "previousClose": 231.78,
+      "change": 16.51,
+      "changePercent": 7.12,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:00.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 242.07000732421875,
-          "high": 242.49000549316406,
-          "low": 233.1699981689453,
-          "close": 233.41000366210938,
-          "volume": 3187400
-        },
         {
           "date": "2026-08-13",
           "open": 233.4600067138672,
@@ -6011,6 +6003,14 @@
           "low": 258.79998779296875,
           "close": 265.010009765625,
           "volume": 5269700
+        },
+        {
+          "date": "2026-11-05",
+          "open": 259.6700134277344,
+          "high": 265.4700012207031,
+          "low": 244.4199981689453,
+          "close": 244.42999267578125,
+          "volume": 12466100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -6025,22 +6025,14 @@
       "region": "台湾/美国",
       "linkNode": "wafer-foundry",
       "yahoo": "TSM",
-      "price": 353.1,
-      "previousClose": 414,
-      "change": -60.9,
-      "changePercent": -14.71,
+      "price": 375.44,
+      "previousClose": 418.2,
+      "change": -42.76,
+      "changePercent": -10.22,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 432.6499938964844,
-          "high": 433.2799987792969,
-          "low": 427.0199890136719,
-          "close": 429.1499938964844,
-          "volume": 9534200
-        },
         {
           "date": "2026-08-13",
           "open": 429.1499938964844,
@@ -6512,6 +6504,14 @@
           "low": 391.6099853515625,
           "close": 395.75,
           "volume": 14516500
+        },
+        {
+          "date": "2026-11-05",
+          "open": 379.75,
+          "high": 380.7799987792969,
+          "low": 351.19000244140625,
+          "close": 353.1000061035156,
+          "volume": 43030700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -6526,22 +6526,14 @@
       "region": "台湾/美国",
       "linkNode": "wafer-foundry",
       "yahoo": "UMC",
-      "price": 13.38,
-      "previousClose": 19.29,
-      "change": -5.91,
-      "changePercent": -30.64,
+      "price": 13.85,
+      "previousClose": 19.2,
+      "change": -5.35,
+      "changePercent": -27.86,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 19.670000076293945,
-          "high": 19.670000076293945,
-          "low": 19.299999237060547,
-          "close": 19.309999465942383,
-          "volume": 10598500
-        },
         {
           "date": "2026-08-13",
           "open": 19.25,
@@ -7013,6 +7005,14 @@
           "low": 15.920000076293945,
           "close": 16.059999465942383,
           "volume": 14114000
+        },
+        {
+          "date": "2026-11-05",
+          "open": 14.350000381469727,
+          "high": 14.350000381469727,
+          "low": 13.319999694824219,
+          "close": 13.380000114440918,
+          "volume": 38115900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -7027,22 +7027,14 @@
       "region": "美国",
       "linkNode": "wafer-foundry",
       "yahoo": "GFS",
-      "price": 36.36,
-      "previousClose": 49.46,
-      "change": -13.1,
-      "changePercent": -26.49,
+      "price": 38.62,
+      "previousClose": 50.36,
+      "change": -11.74,
+      "changePercent": -23.31,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 53.48500061035156,
-          "high": 53.71500015258789,
-          "low": 52.29999923706055,
-          "close": 53.18000030517578,
-          "volume": 4225200
-        },
         {
           "date": "2026-08-13",
           "open": 52.619998931884766,
@@ -7514,6 +7506,14 @@
           "low": 39.029998779296875,
           "close": 40.34000015258789,
           "volume": 9876400
+        },
+        {
+          "date": "2026-11-05",
+          "open": 38.81999969482422,
+          "high": 38.845001220703125,
+          "low": 35.84000015258789,
+          "close": 36.36000061035156,
+          "volume": 13690300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -7528,22 +7528,14 @@
       "region": "美国",
       "linkNode": "memory",
       "yahoo": "MU",
-      "price": 656.39,
-      "previousClose": 893.19,
-      "change": -236.8,
-      "changePercent": -26.51,
+      "price": 690,
+      "previousClose": 881.47,
+      "change": -191.47,
+      "changePercent": -21.72,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 912.9400024414062,
-          "high": 935.7999877929688,
-          "low": 899.5399780273438,
-          "close": 911.2899780273438,
-          "volume": 36804900
-        },
         {
           "date": "2026-08-13",
           "open": 912.8900146484375,
@@ -8015,6 +8007,14 @@
           "low": 782,
           "close": 795.22998046875,
           "volume": 35906100
+        },
+        {
+          "date": "2026-11-05",
+          "open": 752.6900024414062,
+          "high": 761.8099975585938,
+          "low": 650,
+          "close": 656.3900146484375,
+          "volume": 77872700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -8029,22 +8029,14 @@
       "region": "美国",
       "linkNode": "nand",
       "yahoo": "WDC",
-      "price": 267.63,
-      "previousClose": 519.17,
-      "change": -251.54,
-      "changePercent": -48.45,
+      "price": 263.78,
+      "previousClose": 451.52,
+      "change": -187.74,
+      "changePercent": -41.58,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 457.07000732421875,
-          "high": 467.79998779296875,
-          "low": 450.8800048828125,
-          "close": 454.1000061035156,
-          "volume": 5750500
-        },
         {
           "date": "2026-08-13",
           "open": 453.1300048828125,
@@ -8516,6 +8508,14 @@
           "low": 321.6000061035156,
           "close": 323.8299865722656,
           "volume": 7265700
+        },
+        {
+          "date": "2026-11-05",
+          "open": 304.1199951171875,
+          "high": 305.4100036621094,
+          "low": 265,
+          "close": 267.6300048828125,
+          "volume": 18349400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -8530,22 +8530,14 @@
       "region": "美国",
       "linkNode": "nand",
       "yahoo": "STX",
-      "price": 466.53,
-      "previousClose": 837.66,
-      "change": -371.13,
-      "changePercent": -44.31,
+      "price": 460.99,
+      "previousClose": 852.95,
+      "change": -391.96,
+      "changePercent": -45.95,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 861.3499755859375,
-          "high": 892,
-          "low": 849.5999755859375,
-          "close": 878.2100219726562,
-          "volume": 4732300
-        },
         {
           "date": "2026-08-13",
           "open": 872.3099975585938,
@@ -9017,6 +9009,14 @@
           "low": 555,
           "close": 557.0599975585938,
           "volume": 6778500
+        },
+        {
+          "date": "2026-11-05",
+          "open": 520.6799926757812,
+          "high": 524.1300048828125,
+          "low": 461.1099853515625,
+          "close": 466.5299987792969,
+          "volume": 9660100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -9031,22 +9031,14 @@
       "region": "美国",
       "linkNode": "wafer-foundry",
       "yahoo": "INTC",
-      "price": 52.25,
-      "previousClose": 101.06,
-      "change": -48.81,
-      "changePercent": -48.3,
+      "price": 56.28,
+      "previousClose": 99.81,
+      "change": -43.53,
+      "changePercent": -43.61,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 101.33000183105469,
-          "high": 103.16000366210938,
-          "low": 100.12000274658203,
-          "close": 100.94999694824219,
-          "volume": 162446700
-        },
         {
           "date": "2026-08-13",
           "open": 101.51000213623047,
@@ -9518,6 +9510,14 @@
           "low": 56.77000045776367,
           "close": 58.27000045776367,
           "volume": 189308900
+        },
+        {
+          "date": "2026-11-05",
+          "open": 56.5099983215332,
+          "high": 56.72999954223633,
+          "low": 51.5099983215332,
+          "close": 52.25,
+          "volume": 270291000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -9532,22 +9532,14 @@
       "region": "欧洲/美国",
       "linkNode": "equipment",
       "yahoo": "ASML",
-      "price": 1356.65,
-      "previousClose": 1678.22,
-      "change": -321.57,
-      "changePercent": -19.16,
+      "price": 1424.75,
+      "previousClose": 1704.37,
+      "change": -279.62,
+      "changePercent": -16.41,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 1832.6300048828125,
-          "high": 1845,
-          "low": 1807.3800048828125,
-          "close": 1810.0699462890625,
-          "volume": 1388800
-        },
         {
           "date": "2026-08-13",
           "open": 1819.0699462890625,
@@ -10019,6 +10011,14 @@
           "low": 1478.9599609375,
           "close": 1496.300048828125,
           "volume": 1974900
+        },
+        {
+          "date": "2026-11-05",
+          "open": 1434.260009765625,
+          "high": 1443.47998046875,
+          "low": 1355.050048828125,
+          "close": 1356.6500244140625,
+          "volume": 4012400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -10033,22 +10033,14 @@
       "region": "美国",
       "linkNode": "equipment",
       "yahoo": "AMAT",
-      "price": 319.25,
-      "previousClose": 534.24,
-      "change": -214.99,
-      "changePercent": -40.24,
+      "price": 332.71,
+      "previousClose": 527.48,
+      "change": -194.77,
+      "changePercent": -36.92,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 548,
-          "high": 553.75,
-          "low": 544.9000244140625,
-          "close": 548.1500244140625,
-          "volume": 7495000
-        },
         {
           "date": "2026-08-13",
           "open": 548.8099975585938,
@@ -10520,6 +10512,14 @@
           "low": 362.92999267578125,
           "close": 369.3999938964844,
           "volume": 7901700
+        },
+        {
+          "date": "2026-11-05",
+          "open": 347.6000061035156,
+          "high": 350,
+          "low": 316.95001220703125,
+          "close": 319.25,
+          "volume": 17048700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -10534,22 +10534,14 @@
       "region": "美国",
       "linkNode": "equipment",
       "yahoo": "LRCX",
-      "price": 185.2,
-      "previousClose": 307.42,
-      "change": -122.22,
-      "changePercent": -39.76,
+      "price": 200.44,
+      "previousClose": 305.77,
+      "change": -105.33,
+      "changePercent": -34.45,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 326.8399963378906,
-          "high": 329.489990234375,
-          "low": 323.5,
-          "close": 326.1099853515625,
-          "volume": 8075600
-        },
         {
           "date": "2026-08-13",
           "open": 327.6199951171875,
@@ -11021,6 +11013,14 @@
           "low": 218.5,
           "close": 221.42999267578125,
           "volume": 14578400
+        },
+        {
+          "date": "2026-11-05",
+          "open": 207.02000427246094,
+          "high": 210.05999755859375,
+          "low": 184.24000549316406,
+          "close": 185.1999969482422,
+          "volume": 31453300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -11035,22 +11035,14 @@
       "region": "美国",
       "linkNode": "equipment",
       "yahoo": "KLAC",
-      "price": 129.8,
-      "previousClose": 192.8,
-      "change": -63,
-      "changePercent": -32.68,
+      "price": 138.49,
+      "previousClose": 193.22,
+      "change": -54.73,
+      "changePercent": -28.33,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 210.10000610351562,
-          "high": 210.27000427246094,
-          "low": 205.22000122070312,
-          "close": 208.25,
-          "volume": 11951900
-        },
         {
           "date": "2026-08-13",
           "open": 208.52000427246094,
@@ -11522,6 +11514,14 @@
           "low": 147.38999938964844,
           "close": 149.7899932861328,
           "volume": 15930300
+        },
+        {
+          "date": "2026-11-05",
+          "open": 141.92999267578125,
+          "high": 142.83999633789062,
+          "low": 128.1699981689453,
+          "close": 129.8000030517578,
+          "volume": 34579300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -11536,22 +11536,14 @@
       "region": "美国",
       "linkNode": "equipment",
       "yahoo": "TER",
-      "price": 212.74,
-      "previousClose": 389.39,
-      "change": -176.65,
-      "changePercent": -45.37,
+      "price": 218.22,
+      "previousClose": 384.89,
+      "change": -166.67,
+      "changePercent": -43.3,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 396.5,
-          "high": 408.54998779296875,
-          "low": 393.1600036621094,
-          "close": 402.739990234375,
-          "volume": 2957100
-        },
         {
           "date": "2026-08-13",
           "open": 399.3999938964844,
@@ -12023,6 +12015,14 @@
           "low": 245.94000244140625,
           "close": 250.99000549316406,
           "volume": 4436500
+        },
+        {
+          "date": "2026-11-05",
+          "open": 242.0500030517578,
+          "high": 242.0500030517578,
+          "low": 211.6300048828125,
+          "close": 212.74000549316406,
+          "volume": 11087700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -12037,22 +12037,14 @@
       "region": "美国",
       "linkNode": "equipment",
       "yahoo": "ONTO",
-      "price": 155.99,
-      "previousClose": 276,
-      "change": -120.01,
-      "changePercent": -43.48,
+      "price": 173.28,
+      "previousClose": 268.7,
+      "change": -95.42,
+      "changePercent": -35.51,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 333.1300048828125,
-          "high": 343.5799865722656,
-          "low": 332.5050048828125,
-          "close": 337.3500061035156,
-          "volume": 1356700
-        },
         {
           "date": "2026-08-13",
           "open": 334.57000732421875,
@@ -12524,6 +12516,14 @@
           "low": 179.9600067138672,
           "close": 184.82000732421875,
           "volume": 1488900
+        },
+        {
+          "date": "2026-11-05",
+          "open": 171.47999572753906,
+          "high": 175.80999755859375,
+          "low": 155.13099670410156,
+          "close": 155.99000549316406,
+          "volume": 2214700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -12538,22 +12538,14 @@
       "region": "美国/中国大陆",
       "linkNode": "equipment",
       "yahoo": "ACMR",
-      "price": 39.31,
-      "previousClose": 79.9,
-      "change": -40.59,
-      "changePercent": -50.8,
+      "price": 44.61,
+      "previousClose": 78.98,
+      "change": -34.37,
+      "changePercent": -43.52,
       "currency": "USD",
       "exchange": "NGM",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 84.37000274658203,
-          "high": 85.0999984741211,
-          "low": 81.22000122070312,
-          "close": 81.26000213623047,
-          "volume": 593700
-        },
         {
           "date": "2026-08-13",
           "open": 80.23999786376953,
@@ -13025,6 +13017,14 @@
           "low": 43.380001068115234,
           "close": 44.43000030517578,
           "volume": 1682700
+        },
+        {
+          "date": "2026-11-05",
+          "open": 41.04999923706055,
+          "high": 44.470001220703125,
+          "low": 37.470001220703125,
+          "close": 39.310001373291016,
+          "volume": 2816600
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -13039,22 +13039,14 @@
       "region": "美国",
       "linkNode": "optical",
       "yahoo": "COHR",
-      "price": 169.76,
-      "previousClose": 328.22,
-      "change": -158.46,
-      "changePercent": -48.28,
+      "price": 192.81,
+      "previousClose": 334.22,
+      "change": -141.41,
+      "changePercent": -42.31,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 358.1400146484375,
-          "high": 362.05999755859375,
-          "low": 338.7300109863281,
-          "close": 355.6400146484375,
-          "volume": 12452800
-        },
         {
           "date": "2026-08-13",
           "open": 344.8800048828125,
@@ -13526,6 +13518,14 @@
           "low": 187.16000366210938,
           "close": 195.08999633789062,
           "volume": 11769500
+        },
+        {
+          "date": "2026-11-05",
+          "open": 184.50999450683594,
+          "high": 188.6199951171875,
+          "low": 160.22999572753906,
+          "close": 169.75999450683594,
+          "volume": 17277200
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -13540,22 +13540,14 @@
       "region": "美国",
       "linkNode": "optical",
       "yahoo": "LITE",
-      "price": 509.7,
-      "previousClose": 826.26,
-      "change": -316.56,
-      "changePercent": -38.31,
+      "price": 538.59,
+      "previousClose": 838.06,
+      "change": -299.47,
+      "changePercent": -35.73,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:00.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 899,
-          "high": 966.5999755859375,
-          "low": 836.3099975585938,
-          "close": 932.469970703125,
-          "volume": 11774600
-        },
         {
           "date": "2026-08-13",
           "open": 927.5850219726562,
@@ -14027,6 +14019,14 @@
           "low": 598.7000122070312,
           "close": 626.75,
           "volume": 9546900
+        },
+        {
+          "date": "2026-11-05",
+          "open": 594.1950073242188,
+          "high": 596.8200073242188,
+          "low": 506.6889953613281,
+          "close": 509.70001220703125,
+          "volume": 10038000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -14041,22 +14041,14 @@
       "region": "美国",
       "linkNode": "optical",
       "yahoo": "CIEN",
-      "price": 230.81,
-      "previousClose": 408.83,
-      "change": -178.02,
-      "changePercent": -43.54,
+      "price": 243.39,
+      "previousClose": 403.76,
+      "change": -160.37,
+      "changePercent": -39.72,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:00:02.000Z",
+      "marketTime": "2026-11-06T21:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 414.510009765625,
-          "high": 446.3599853515625,
-          "low": 409.239990234375,
-          "close": 432.04998779296875,
-          "volume": 3989300
-        },
         {
           "date": "2026-08-13",
           "open": 430.32000732421875,
@@ -14528,6 +14520,14 @@
           "low": 268.6700134277344,
           "close": 272.239990234375,
           "volume": 3877400
+        },
+        {
+          "date": "2026-11-05",
+          "open": 257.94000244140625,
+          "high": 257.94000244140625,
+          "low": 225.57000732421875,
+          "close": 230.80999755859375,
+          "volume": 6220100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -14542,22 +14542,14 @@
       "region": "美国",
       "linkNode": "module",
       "yahoo": "FLEX",
-      "price": 66.73,
-      "previousClose": 121.88,
-      "change": -55.15,
-      "changePercent": -45.25,
+      "price": 69.78,
+      "previousClose": 122.65,
+      "change": -52.88,
+      "changePercent": -43.11,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 128.19000244140625,
-          "high": 130.3800048828125,
-          "low": 124.47000122070312,
-          "close": 124.52999877929688,
-          "volume": 3505800
-        },
         {
           "date": "2026-08-13",
           "open": 125.08999633789062,
@@ -15029,6 +15021,14 @@
           "low": 75.30000305175781,
           "close": 77.23999786376953,
           "volume": 7889400
+        },
+        {
+          "date": "2026-11-05",
+          "open": 74.68000030517578,
+          "high": 74.68000030517578,
+          "low": 65.6500015258789,
+          "close": 66.7300033569336,
+          "volume": 13301800
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -15043,22 +15043,14 @@
       "region": "美国",
       "linkNode": "module",
       "yahoo": "SMCI",
-      "price": 27.08,
-      "previousClose": 30.32,
-      "change": -3.24,
-      "changePercent": -10.69,
+      "price": 28.76,
+      "previousClose": 29.38,
+      "change": -0.62,
+      "changePercent": -2.11,
       "currency": "USD",
       "exchange": "NMS",
-      "marketTime": "2026-11-05T21:00:01.000Z",
+      "marketTime": "2026-11-06T21:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 34.9900016784668,
-          "high": 38.150001525878906,
-          "low": 33.939998626708984,
-          "close": 37.61000061035156,
-          "volume": 165736400
-        },
         {
           "date": "2026-08-13",
           "open": 38.279998779296875,
@@ -15530,6 +15522,14 @@
           "low": 29.389999389648438,
           "close": 29.600000381469727,
           "volume": 88731500
+        },
+        {
+          "date": "2026-11-05",
+          "open": 28.31999969482422,
+          "high": 28.670000076293945,
+          "low": 25.809999465942383,
+          "close": 27.079999923706055,
+          "volume": 62938500
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -15544,22 +15544,14 @@
       "region": "美国",
       "linkNode": "demand",
       "yahoo": "DELL",
-      "price": 316.91,
-      "previousClose": 462.7,
-      "change": -145.79,
-      "changePercent": -31.51,
+      "price": 328.53,
+      "previousClose": 437.65,
+      "change": -109.12,
+      "changePercent": -24.93,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:04:18.000Z",
+      "marketTime": "2026-11-06T21:02:49.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 459.2799987792969,
-          "high": 484.739990234375,
-          "low": 455,
-          "close": 484.5,
-          "volume": 6243900
-        },
         {
           "date": "2026-08-13",
           "open": 499.67999267578125,
@@ -16031,6 +16023,14 @@
           "low": 366.6199951171875,
           "close": 372.3599853515625,
           "volume": 10771200
+        },
+        {
+          "date": "2026-11-05",
+          "open": 350,
+          "high": 352.70001220703125,
+          "low": 315,
+          "close": 316.9100036621094,
+          "volume": 14226900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -16045,22 +16045,14 @@
       "region": "美国",
       "linkNode": "demand",
       "yahoo": "HPE",
-      "price": 44.16,
-      "previousClose": 53.22,
-      "change": -9.06,
-      "changePercent": -17.02,
+      "price": 44.77,
+      "previousClose": 52.43,
+      "change": -7.66,
+      "changePercent": -14.61,
       "currency": "USD",
       "exchange": "NYQ",
-      "marketTime": "2026-11-05T21:04:34.000Z",
+      "marketTime": "2026-11-06T21:03:07.000Z",
       "history": [
-        {
-          "date": "2026-08-12",
-          "open": 55.709999084472656,
-          "high": 58.900001525878906,
-          "low": 55.060001373291016,
-          "close": 58.790000915527344,
-          "volume": 22395200
-        },
         {
           "date": "2026-08-13",
           "open": 61.20000076293945,
@@ -16532,6 +16524,14 @@
           "low": 49.15999984741211,
           "close": 50.09000015258789,
           "volume": 21052200
+        },
+        {
+          "date": "2026-11-05",
+          "open": 47.67499923706055,
+          "high": 47.77000045776367,
+          "low": 43.380001068115234,
+          "close": 44.15999984741211,
+          "volume": 28192900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -16547,13 +16547,13 @@
       "linkNode": "demand",
       "yahoo": "^N225",
       "kind": "index",
-      "price": 56853.38,
+      "price": 57434.77,
       "previousClose": 65683.26,
-      "change": -8829.88,
-      "changePercent": -13.44,
+      "change": -8248.49,
+      "changePercent": -12.56,
       "currency": "JPY",
       "exchange": "OSA",
-      "marketTime": "2026-11-06T01:24:25.000Z",
+      "marketTime": "2026-11-06T06:45:02.000Z",
       "history": [
         {
           "date": "2026-08-06",
@@ -17028,12 +17028,12 @@
           "volume": 260100000
         },
         {
-          "date": "2026-11-06",
-          "open": 60374.3515625,
-          "high": 60374.3515625,
-          "low": 56815.8984375,
-          "close": 56853.37890625,
-          "volume": 0
+          "date": "2026-11-05",
+          "open": 62384.73046875,
+          "high": 62653.98046875,
+          "low": 60786.19140625,
+          "close": 61077.8984375,
+          "volume": 290000000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -17048,13 +17048,13 @@
       "region": "日本",
       "linkNode": "equipment",
       "yahoo": "8035.T",
-      "price": 8014,
+      "price": 8263,
       "previousClose": 11066,
-      "change": -3052,
-      "changePercent": -27.58,
+      "change": -2803,
+      "changePercent": -25.33,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:28.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -17531,10 +17531,10 @@
         {
           "date": "2026-11-06",
           "open": 7502,
-          "high": 8174,
+          "high": 8509,
           "low": 7502,
-          "close": 8014,
-          "volume": 13155600
+          "close": 8263,
+          "volume": 35062100
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -17549,13 +17549,13 @@
       "region": "日本",
       "linkNode": "equipment",
       "yahoo": "6857.T",
-      "price": 26000,
+      "price": 28015,
       "previousClose": 32930,
-      "change": -6930,
-      "changePercent": -21.04,
+      "change": -4915,
+      "changePercent": -14.93,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -18032,10 +18032,10 @@
         {
           "date": "2026-11-06",
           "open": 25485,
-          "high": 26700,
+          "high": 28675,
           "low": 24655,
-          "close": 26000,
-          "volume": 12598600
+          "close": 28015,
+          "volume": 36946000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -18050,13 +18050,13 @@
       "region": "日本",
       "linkNode": "equipment",
       "yahoo": "6146.T",
-      "price": 39000,
+      "price": 40860,
       "previousClose": 61590,
-      "change": -22590,
-      "changePercent": -36.68,
+      "change": -20730,
+      "changePercent": -33.66,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -18533,10 +18533,10 @@
         {
           "date": "2026-11-06",
           "open": 37250,
-          "high": 39520,
-          "low": 37150,
-          "close": 39000,
-          "volume": 1386500
+          "high": 41320,
+          "low": 37210,
+          "close": 40860,
+          "volume": 3763000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -18551,13 +18551,13 @@
       "region": "日本",
       "linkNode": "equipment",
       "yahoo": "6920.T",
-      "price": 30450,
+      "price": 32040,
       "previousClose": 43330,
-      "change": -12880,
-      "changePercent": -29.73,
+      "change": -11290,
+      "changePercent": -26.06,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -19034,10 +19034,10 @@
         {
           "date": "2026-11-06",
           "open": 29370,
-          "high": 31010,
-          "low": 29340,
-          "close": 30450,
-          "volume": 3123700
+          "high": 32590,
+          "low": 29345,
+          "close": 32040,
+          "volume": 7191000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -19052,13 +19052,13 @@
       "region": "日本",
       "linkNode": "equipment",
       "yahoo": "7735.T",
-      "price": 7374,
+      "price": 7778,
       "previousClose": 13690,
-      "change": -6316,
-      "changePercent": -46.14,
+      "change": -5912,
+      "changePercent": -43.18,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:29.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -19535,10 +19535,10 @@
         {
           "date": "2026-11-06",
           "open": 7163,
-          "high": 7504,
+          "high": 7935,
           "low": 7125,
-          "close": 7374,
-          "volume": 3365800
+          "close": 7778,
+          "volume": 8554400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -19553,13 +19553,13 @@
       "region": "日本",
       "linkNode": "design",
       "yahoo": "6723.T",
-      "price": 2403,
+      "price": 2477.5,
       "previousClose": 3673,
-      "change": -1270,
-      "changePercent": -34.58,
+      "change": -1195.5,
+      "changePercent": -32.55,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:28.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -20036,10 +20036,10 @@
         {
           "date": "2026-11-06",
           "open": 2228.5,
-          "high": 2445,
+          "high": 2513,
           "low": 2228,
-          "close": 2403,
-          "volume": 9499000
+          "close": 2477.5,
+          "volume": 24891300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -20054,13 +20054,13 @@
       "region": "日本",
       "linkNode": "materials",
       "yahoo": "3436.T",
-      "price": 1718,
+      "price": 1784.5,
       "previousClose": 3544,
-      "change": -1826,
-      "changePercent": -51.52,
+      "change": -1759.5,
+      "changePercent": -49.65,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -20537,10 +20537,10 @@
         {
           "date": "2026-11-06",
           "open": 1671.5,
-          "high": 1740.5,
+          "high": 1830.5,
           "low": 1643.5,
-          "close": 1718,
-          "volume": 8596200
+          "close": 1784.5,
+          "volume": 20725200
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -20555,13 +20555,13 @@
       "region": "日本",
       "linkNode": "materials",
       "yahoo": "4063.T",
-      "price": 5273,
+      "price": 5312,
       "previousClose": 6167,
-      "change": -894,
-      "changePercent": -14.5,
+      "change": -855,
+      "changePercent": -13.86,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:29.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -21039,9 +21039,9 @@
           "date": "2026-11-06",
           "open": 5304,
           "high": 5355,
-          "low": 5248,
-          "close": 5273,
-          "volume": 3878500
+          "low": 5243,
+          "close": 5312,
+          "volume": 10043000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -21056,13 +21056,13 @@
       "region": "日本",
       "linkNode": "packaging",
       "yahoo": "4062.T",
-      "price": 5732,
+      "price": 6147,
       "previousClose": 9505,
-      "change": -3773,
-      "changePercent": -39.69,
+      "change": -3358,
+      "changePercent": -35.33,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -21539,10 +21539,10 @@
         {
           "date": "2026-11-06",
           "open": 5726,
-          "high": 5993,
+          "high": 6379,
           "low": 5726,
-          "close": 5732,
-          "volume": 13765900
+          "close": 6147,
+          "volume": 33174400
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -21577,13 +21577,13 @@
       "region": "日本",
       "linkNode": "materials",
       "yahoo": "4186.T",
-      "price": 6064,
+      "price": 6404,
       "previousClose": 8910,
-      "change": -2846,
-      "changePercent": -31.94,
+      "change": -2506,
+      "changePercent": -28.13,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:30.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -22060,10 +22060,10 @@
         {
           "date": "2026-11-06",
           "open": 6026,
-          "high": 6165,
+          "high": 6404,
           "low": 5961,
-          "close": 6064,
-          "volume": 617100
+          "close": 6404,
+          "volume": 1947700
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -22078,13 +22078,13 @@
       "region": "日本",
       "linkNode": "design",
       "yahoo": "6963.T",
-      "price": 2592.5,
+      "price": 2759,
       "previousClose": 4600,
-      "change": -2007.5,
-      "changePercent": -43.64,
+      "change": -1841,
+      "changePercent": -40.02,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:31.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -22561,10 +22561,10 @@
         {
           "date": "2026-11-06",
           "open": 2566,
-          "high": 2736,
+          "high": 2759,
           "low": 2554.5,
-          "close": 2592.5,
-          "volume": 7577700
+          "close": 2759,
+          "volume": 21082000
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -22579,13 +22579,13 @@
       "region": "日本",
       "linkNode": "demand",
       "yahoo": "6702.T",
-      "price": 3270,
+      "price": 3218,
       "previousClose": 3579,
-      "change": -309,
-      "changePercent": -8.63,
+      "change": -361,
+      "changePercent": -10.09,
       "currency": "JPY",
       "exchange": "JPX",
-      "marketTime": "2026-11-06T01:24:26.000Z",
+      "marketTime": "2026-11-06T06:30:00.000Z",
       "history": [
         {
           "date": "2026-08-07",
@@ -23063,9 +23063,9 @@
           "date": "2026-11-06",
           "open": 3306,
           "high": 3335,
-          "low": 3235,
-          "close": 3270,
-          "volume": 3992100
+          "low": 3182,
+          "close": 3218,
+          "volume": 12090900
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -23080,13 +23080,13 @@
       "region": "台湾",
       "linkNode": "wafer-foundry",
       "yahoo": "2330.TW",
-      "price": 2060,
+      "price": 2135,
       "previousClose": 2365,
-      "change": -305,
-      "changePercent": -12.9,
+      "change": -230,
+      "changePercent": -9.73,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:29.000Z",
+      "marketTime": "2026-11-06T05:30:05.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -23563,10 +23563,10 @@
         {
           "date": "2026-11-06",
           "open": 2020,
-          "high": 2065,
+          "high": 2195,
           "low": 2020,
-          "close": 2060,
-          "volume": 35226576
+          "close": 2135,
+          "volume": 97176862
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -23581,13 +23581,13 @@
       "region": "台湾",
       "linkNode": "wafer-foundry",
       "yahoo": "2303.TW",
-      "price": 88.6,
+      "price": 92,
       "previousClose": 121.5,
-      "change": -32.9,
-      "changePercent": -27.08,
+      "change": -29.5,
+      "changePercent": -24.28,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:03.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -24064,10 +24064,10 @@
         {
           "date": "2026-11-06",
           "open": 88.5999984741211,
-          "high": 88.5999984741211,
+          "high": 94.5999984741211,
           "low": 88.5999984741211,
-          "close": 88.5999984741211,
-          "volume": 23825064
+          "close": 92,
+          "volume": 201520078
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -24082,13 +24082,13 @@
       "region": "台湾",
       "linkNode": "design",
       "yahoo": "2454.TW",
-      "price": 3115,
+      "price": 3390,
       "previousClose": 3920,
-      "change": -805,
-      "changePercent": -20.54,
+      "change": -530,
+      "changePercent": -13.52,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:03.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -24565,10 +24565,10 @@
         {
           "date": "2026-11-06",
           "open": 3115,
-          "high": 3115,
+          "high": 3480,
           "low": 3115,
-          "close": 3115,
-          "volume": 2530975
+          "close": 3390,
+          "volume": 21324422
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -24583,13 +24583,13 @@
       "region": "台湾",
       "linkNode": "design",
       "yahoo": "2379.TW",
-      "price": 671,
+      "price": 708,
       "previousClose": 744,
-      "change": -73,
-      "changePercent": -9.81,
+      "change": -36,
+      "changePercent": -4.84,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:17.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -25066,10 +25066,10 @@
         {
           "date": "2026-11-06",
           "open": 665,
-          "high": 675,
+          "high": 718,
           "low": 658,
-          "close": 671,
-          "volume": 985132
+          "close": 708,
+          "volume": 4121136
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -25084,13 +25084,13 @@
       "region": "台湾",
       "linkNode": "design",
       "yahoo": "3034.TW",
-      "price": 484.5,
+      "price": 495.5,
       "previousClose": 543,
-      "change": -58.5,
-      "changePercent": -10.77,
+      "change": -47.5,
+      "changePercent": -8.75,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:29.000Z",
+      "marketTime": "2026-11-06T05:30:30.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -25567,10 +25567,10 @@
         {
           "date": "2026-11-06",
           "open": 470,
-          "high": 489,
+          "high": 502,
           "low": 469.5,
-          "close": 484.5,
-          "volume": 1391425
+          "close": 495.5,
+          "volume": 5934442
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -25585,13 +25585,13 @@
       "region": "台湾",
       "linkNode": "design",
       "yahoo": "3661.TW",
-      "price": 2665,
+      "price": 2830,
       "previousClose": 3660,
-      "change": -995,
-      "changePercent": -27.19,
+      "change": -830,
+      "changePercent": -22.68,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:17:55.000Z",
+      "marketTime": "2026-11-06T05:30:15.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -26068,10 +26068,10 @@
         {
           "date": "2026-11-06",
           "open": 2665,
-          "high": 2665,
+          "high": 2875,
           "low": 2665,
-          "close": 2665,
-          "volume": 336675
+          "close": 2830,
+          "volume": 2976284
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -26086,13 +26086,13 @@
       "region": "台湾",
       "linkNode": "packaging",
       "yahoo": "3711.TW",
-      "price": 515,
+      "price": 527,
       "previousClose": 595,
-      "change": -80,
-      "changePercent": -13.45,
+      "change": -68,
+      "changePercent": -11.43,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:29.000Z",
+      "marketTime": "2026-11-06T05:30:03.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -26569,10 +26569,10 @@
         {
           "date": "2026-11-06",
           "open": 515,
-          "high": 515,
+          "high": 551,
           "low": 515,
-          "close": 515,
-          "volume": 3853737
+          "close": 527,
+          "volume": 41279394
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -26587,13 +26587,13 @@
       "region": "台湾",
       "linkNode": "dram",
       "yahoo": "2408.TW",
-      "price": 324,
+      "price": 343.5,
       "previousClose": 459,
-      "change": -135,
-      "changePercent": -29.41,
+      "change": -115.5,
+      "changePercent": -25.16,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:03.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -27070,10 +27070,10 @@
         {
           "date": "2026-11-06",
           "open": 324,
-          "high": 324,
+          "high": 356,
           "low": 324,
-          "close": 324,
-          "volume": 3547870
+          "close": 343.5,
+          "volume": 63307959
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -27088,13 +27088,13 @@
       "region": "台湾",
       "linkNode": "memory",
       "yahoo": "2344.TW",
-      "price": 115,
+      "price": 120.5,
       "previousClose": 171,
-      "change": -56,
-      "changePercent": -32.75,
+      "change": -50.5,
+      "changePercent": -29.53,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:26.000Z",
+      "marketTime": "2026-11-06T05:30:05.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -27571,10 +27571,10 @@
         {
           "date": "2026-11-06",
           "open": 115,
-          "high": 115,
+          "high": 123.5,
           "low": 115,
-          "close": 115,
-          "volume": 5329301
+          "close": 120.5,
+          "volume": 82903962
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -27589,13 +27589,13 @@
       "region": "台湾",
       "linkNode": "materials",
       "yahoo": "6488.TWO",
-      "price": 508,
+      "price": 512,
       "previousClose": 872,
-      "change": -364,
-      "changePercent": -41.74,
+      "change": -360,
+      "changePercent": -41.28,
       "currency": "TWD",
       "exchange": "TWO",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:05.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -28072,10 +28072,10 @@
         {
           "date": "2026-11-06",
           "open": 508,
-          "high": 508,
+          "high": 529,
           "low": 508,
-          "close": 508,
-          "volume": 726989
+          "close": 512,
+          "volume": 13650427
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -28090,13 +28090,13 @@
       "region": "台湾",
       "linkNode": "design",
       "yahoo": "3443.TW",
-      "price": 5765,
+      "price": 6205,
       "previousClose": 4480,
-      "change": 1285,
-      "changePercent": 28.68,
+      "change": 1725,
+      "changePercent": 38.5,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:15:14.000Z",
+      "marketTime": "2026-11-06T05:30:16.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -28573,10 +28573,10 @@
         {
           "date": "2026-11-06",
           "open": 5765,
-          "high": 5765,
+          "high": 6460,
           "low": 5765,
-          "close": 5765,
-          "volume": 72293
+          "close": 6205,
+          "volume": 4179802
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -28591,13 +28591,13 @@
       "region": "台湾",
       "linkNode": "module",
       "yahoo": "2382.TW",
-      "price": 279.5,
+      "price": 290.5,
       "previousClose": 302,
-      "change": -22.5,
-      "changePercent": -7.45,
+      "change": -11.5,
+      "changePercent": -3.81,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:29.000Z",
+      "marketTime": "2026-11-06T05:30:17.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -29074,10 +29074,10 @@
         {
           "date": "2026-11-06",
           "open": 275,
-          "high": 280.5,
+          "high": 294.5,
           "low": 272,
-          "close": 279.5,
-          "volume": 7340116
+          "close": 290.5,
+          "volume": 36787521
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -29092,13 +29092,13 @@
       "region": "台湾",
       "linkNode": "module",
       "yahoo": "3231.TW",
-      "price": 155.5,
+      "price": 160,
       "previousClose": 189.5,
-      "change": -34,
-      "changePercent": -17.94,
+      "change": -29.5,
+      "changePercent": -15.57,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:30.000Z",
+      "marketTime": "2026-11-06T05:30:05.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -29575,10 +29575,10 @@
         {
           "date": "2026-11-06",
           "open": 152,
-          "high": 156.5,
+          "high": 163,
           "low": 152,
-          "close": 155.5,
-          "volume": 13843907
+          "close": 160,
+          "volume": 47486516
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -29593,13 +29593,13 @@
       "region": "台湾",
       "linkNode": "module",
       "yahoo": "6669.TW",
-      "price": 1485,
+      "price": 1555,
       "previousClose": 2100.38,
-      "change": -615.38,
-      "changePercent": -29.3,
+      "change": -545.38,
+      "changePercent": -25.97,
       "currency": "TWD",
       "exchange": "TAI",
-      "marketTime": "2026-11-06T01:19:22.000Z",
+      "marketTime": "2026-11-06T05:30:03.000Z",
       "history": [
         {
           "date": "2026-08-11",
@@ -30076,10 +30076,10 @@
         {
           "date": "2026-11-06",
           "open": 1485,
-          "high": 1485,
+          "high": 1610,
           "low": 1485,
-          "close": 1485,
-          "volume": 860043
+          "close": 1555,
+          "volume": 7132942
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -30095,13 +30095,13 @@
       "linkNode": "demand",
       "yahoo": "000001.SS",
       "kind": "index",
-      "price": 3689.91,
+      "price": 3649.18,
       "previousClose": 3900.35,
-      "change": -210.44,
-      "changePercent": -5.4,
+      "change": -251.17,
+      "changePercent": -6.44,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:24.000Z",
+      "marketTime": "2026-11-06T07:00:29.000Z",
       "history": [
         {
           "date": "2026-08-06",
@@ -30574,6 +30574,14 @@
           "low": 3590.798095703125,
           "close": 3686.173095703125,
           "volume": 599400
+        },
+        {
+          "date": "2026-11-05",
+          "open": 3646.572021484375,
+          "high": 3701.5859375,
+          "low": 3646.572021484375,
+          "close": 3689.910888671875,
+          "volume": 571300
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -30589,13 +30597,13 @@
       "linkNode": "demand",
       "yahoo": "399001.SZ",
       "kind": "index",
-      "price": 11471.09,
+      "price": 11175.78,
       "previousClose": 14110.12,
-      "change": -2639.03,
-      "changePercent": -18.7,
+      "change": -2934.34,
+      "changePercent": -20.8,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T08:29:04.000Z",
+      "marketTime": "2026-11-06T08:29:43.000Z",
       "history": [
         {
           "date": "2026-08-06",
@@ -31068,6 +31076,14 @@
           "low": 10826.830078125,
           "close": 11335.6904296875,
           "volume": 2372700
+        },
+        {
+          "date": "2026-11-05",
+          "open": 11216.8095703125,
+          "high": 11613.400390625,
+          "low": 11215.48046875,
+          "close": 11471.08984375,
+          "volume": 2341200
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -31082,22 +31098,14 @@
       "region": "中国大陆",
       "linkNode": "wafer-foundry",
       "yahoo": "688981.SS",
-      "price": 110.69,
+      "price": 110.9,
       "previousClose": 124.15,
-      "change": -13.46,
-      "changePercent": -10.84,
+      "change": -13.25,
+      "changePercent": -10.67,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 122,
-          "high": 126.98999786376953,
-          "low": 121.87999725341797,
-          "close": 124.1500015258789,
-          "volume": 51888149
-        },
         {
           "date": "2026-08-07",
           "open": 123.36000061035156,
@@ -31569,6 +31577,14 @@
           "low": 107.5999984741211,
           "close": 110.69000244140625,
           "volume": 45744772
+        },
+        {
+          "date": "2026-11-06",
+          "open": 106,
+          "high": 113.48999786376953,
+          "low": 105,
+          "close": 110.9000015258789,
+          "volume": 44934854
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -31583,22 +31599,14 @@
       "region": "中国大陆",
       "linkNode": "design",
       "yahoo": "688041.SS",
-      "price": 192.8,
+      "price": 189.5,
       "previousClose": 291.05,
-      "change": -98.25,
-      "changePercent": -33.76,
+      "change": -101.55,
+      "changePercent": -34.89,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:02.000Z",
+      "marketTime": "2026-11-06T07:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 283.32000732421875,
-          "high": 294.79998779296875,
-          "low": 282.32000732421875,
-          "close": 291.04998779296875,
-          "volume": 16258761
-        },
         {
           "date": "2026-08-07",
           "open": 291.0299987792969,
@@ -32070,6 +32078,14 @@
           "low": 183,
           "close": 192.8000030517578,
           "volume": 24238106
+        },
+        {
+          "date": "2026-11-06",
+          "open": 183.75,
+          "high": 192.13999938964844,
+          "low": 182.67999267578125,
+          "close": 189.5,
+          "volume": 18468482
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -32084,22 +32100,14 @@
       "region": "中国大陆",
       "linkNode": "design",
       "yahoo": "688256.SS",
-      "price": 845,
+      "price": 802.9,
       "previousClose": 1168.15,
-      "change": -323.15,
-      "changePercent": -27.66,
+      "change": -365.25,
+      "changePercent": -31.27,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:01.000Z",
+      "marketTime": "2026-11-06T07:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 1103,
-          "high": 1185,
-          "low": 1095,
-          "close": 1168.1500244140625,
-          "volume": 12478455
-        },
         {
           "date": "2026-08-07",
           "open": 1168.1500244140625,
@@ -32571,6 +32579,14 @@
           "low": 812.52001953125,
           "close": 845,
           "volume": 12825261
+        },
+        {
+          "date": "2026-11-06",
+          "open": 795,
+          "high": 830,
+          "low": 776.3599853515625,
+          "close": 802.9000244140625,
+          "volume": 11135886
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -32585,22 +32601,14 @@
       "region": "中国大陆",
       "linkNode": "memory",
       "yahoo": "603986.SS",
-      "price": 263.15,
+      "price": 239.49,
       "previousClose": 385,
-      "change": -121.85,
-      "changePercent": -31.65,
+      "change": -145.51,
+      "changePercent": -37.79,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:01.000Z",
+      "marketTime": "2026-11-06T07:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 363,
-          "high": 394.94000244140625,
-          "low": 363,
-          "close": 385,
-          "volume": 61861191
-        },
         {
           "date": "2026-08-07",
           "open": 384,
@@ -33072,6 +33080,14 @@
           "low": 259,
           "close": 263.1499938964844,
           "volume": 43530942
+        },
+        {
+          "date": "2026-11-06",
+          "open": 242,
+          "high": 247.85000610351562,
+          "low": 238.1999969482422,
+          "close": 239.49000549316406,
+          "volume": 41225055
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -33086,22 +33102,14 @@
       "region": "中国大陆",
       "linkNode": "design",
       "yahoo": "603501.SS",
-      "price": 87.98,
+      "price": 86.6,
       "previousClose": 89.65,
-      "change": -1.67,
-      "changePercent": -1.86,
+      "change": -3.05,
+      "changePercent": -3.4,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 89.80999755859375,
-          "high": 90.25,
-          "low": 88.44000244140625,
-          "close": 89.6500015258789,
-          "volume": 24838079
-        },
         {
           "date": "2026-08-07",
           "open": 89.48999786376953,
@@ -33573,6 +33581,14 @@
           "low": 85.41000366210938,
           "close": 87.9800033569336,
           "volume": 15552750
+        },
+        {
+          "date": "2026-11-06",
+          "open": 86,
+          "high": 88.06999969482422,
+          "low": 85,
+          "close": 86.5999984741211,
+          "volume": 10352378
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -33587,22 +33603,14 @@
       "region": "中国大陆",
       "linkNode": "memory",
       "yahoo": "688008.SS",
-      "price": 163.8,
+      "price": 150.1,
       "previousClose": 208.36,
-      "change": -44.56,
-      "changePercent": -21.39,
+      "change": -58.26,
+      "changePercent": -27.96,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:01.000Z",
+      "marketTime": "2026-11-06T07:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 203.8000030517578,
-          "high": 213.3000030517578,
-          "low": 202,
-          "close": 208.36000061035156,
-          "volume": 48197830
-        },
         {
           "date": "2026-08-07",
           "open": 207.0500030517578,
@@ -34074,6 +34082,14 @@
           "low": 158.44000244140625,
           "close": 163.8000030517578,
           "volume": 43402918
+        },
+        {
+          "date": "2026-11-06",
+          "open": 147.3800048828125,
+          "high": 152.69000244140625,
+          "low": 143.10000610351562,
+          "close": 150.10000610351562,
+          "volume": 44328895
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -34088,22 +34104,14 @@
       "region": "中国大陆",
       "linkNode": "equipment",
       "yahoo": "002371.SZ",
-      "price": 561.01,
+      "price": 560,
       "previousClose": 742.5,
-      "change": -181.49,
-      "changePercent": -24.44,
+      "change": -182.5,
+      "changePercent": -24.58,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T07:04:21.000Z",
+      "marketTime": "2026-11-06T07:04:15.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 717.5,
-          "high": 764.6799926757812,
-          "low": 709,
-          "close": 742.5,
-          "volume": 10759015
-        },
         {
           "date": "2026-08-07",
           "open": 740.5,
@@ -34575,6 +34583,14 @@
           "low": 544.010009765625,
           "close": 561.010009765625,
           "volume": 18393709
+        },
+        {
+          "date": "2026-11-06",
+          "open": 529,
+          "high": 574.5499877929688,
+          "low": 528.8800048828125,
+          "close": 560,
+          "volume": 13920673
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -34595,16 +34611,8 @@
       "changePercent": -29.75,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 348,
-          "high": 373.44000244140625,
-          "low": 347.54998779296875,
-          "close": 361.5899963378906,
-          "volume": 29424121
-        },
         {
           "date": "2026-08-07",
           "open": 360.8399963378906,
@@ -35076,6 +35084,14 @@
           "low": 235,
           "close": 254,
           "volume": 48166353
+        },
+        {
+          "date": "2026-11-06",
+          "open": 240,
+          "high": 263,
+          "low": 238.08999633789062,
+          "close": 254,
+          "volume": 29138386
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -35090,22 +35106,14 @@
       "region": "中国大陆",
       "linkNode": "equipment",
       "yahoo": "688082.SS",
-      "price": 195.84,
+      "price": 200.9,
       "previousClose": 279.1,
-      "change": -83.26,
-      "changePercent": -29.83,
+      "change": -78.2,
+      "changePercent": -28.02,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:01.000Z",
+      "marketTime": "2026-11-06T07:00:00.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 268,
-          "high": 288.79998779296875,
-          "low": 267.010009765625,
-          "close": 279.1000061035156,
-          "volume": 8230077
-        },
         {
           "date": "2026-08-07",
           "open": 279.1700134277344,
@@ -35577,6 +35585,14 @@
           "low": 184,
           "close": 195.83999633789062,
           "volume": 10572820
+        },
+        {
+          "date": "2026-11-06",
+          "open": 190,
+          "high": 211.91000366210938,
+          "low": 185.10000610351562,
+          "close": 200.89999389648438,
+          "volume": 8509597
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -35591,22 +35607,14 @@
       "region": "中国大陆",
       "linkNode": "equipment",
       "yahoo": "688072.SS",
-      "price": 502.84,
+      "price": 497,
       "previousClose": 682.03,
-      "change": -179.19,
-      "changePercent": -26.27,
+      "change": -185.03,
+      "changePercent": -27.13,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 646,
-          "high": 709,
-          "low": 646,
-          "close": 682.030029296875,
-          "volume": 8225102
-        },
         {
           "date": "2026-08-07",
           "open": 680,
@@ -36078,6 +36086,14 @@
           "low": 484.0799865722656,
           "close": 502.8399963378906,
           "volume": 13295451
+        },
+        {
+          "date": "2026-11-06",
+          "open": 480,
+          "high": 513.5,
+          "low": 466.6600036621094,
+          "close": 497,
+          "volume": 9162763
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -36092,22 +36108,14 @@
       "region": "中国大陆",
       "linkNode": "equipment",
       "yahoo": "688037.SS",
-      "price": 224.71,
+      "price": 216.55,
       "previousClose": 301.98,
-      "change": -77.27,
-      "changePercent": -25.59,
+      "change": -85.43,
+      "changePercent": -28.29,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:01.000Z",
+      "marketTime": "2026-11-06T07:00:02.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 290,
-          "high": 311.9800109863281,
-          "low": 283.2699890136719,
-          "close": 301.9800109863281,
-          "volume": 6633121
-        },
         {
           "date": "2026-08-07",
           "open": 303,
@@ -36579,6 +36587,14 @@
           "low": 213.0800018310547,
           "close": 224.7100067138672,
           "volume": 12851071
+        },
+        {
+          "date": "2026-11-06",
+          "open": 214.7100067138672,
+          "high": 231.99000549316406,
+          "low": 213.00999450683594,
+          "close": 216.5500030517578,
+          "volume": 8510209
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -36593,22 +36609,14 @@
       "region": "中国大陆",
       "linkNode": "packaging",
       "yahoo": "600584.SS",
-      "price": 53.63,
+      "price": 52.51,
       "previousClose": 75.87,
-      "change": -22.24,
-      "changePercent": -29.31,
+      "change": -23.36,
+      "changePercent": -30.79,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:02.000Z",
+      "marketTime": "2026-11-06T07:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 67.01000213623047,
-          "high": 75.87000274658203,
-          "low": 67.01000213623047,
-          "close": 75.87000274658203,
-          "volume": 235907084
-        },
         {
           "date": "2026-08-07",
           "open": 75.1500015258789,
@@ -37080,6 +37088,14 @@
           "low": 51,
           "close": 53.630001068115234,
           "volume": 127341582
+        },
+        {
+          "date": "2026-11-06",
+          "open": 50.09000015258789,
+          "high": 54.119998931884766,
+          "low": 50.02000045776367,
+          "close": 52.5099983215332,
+          "volume": 83426157
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -37094,22 +37110,14 @@
       "region": "中国大陆",
       "linkNode": "packaging",
       "yahoo": "002156.SZ",
-      "price": 45.25,
+      "price": 43.95,
       "previousClose": 60.96,
-      "change": -15.71,
-      "changePercent": -25.77,
+      "change": -17.01,
+      "changePercent": -27.9,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T07:04:36.000Z",
+      "marketTime": "2026-11-06T07:04:36.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 56.0099983215332,
-          "high": 62.810001373291016,
-          "low": 56.0099983215332,
-          "close": 60.959999084472656,
-          "volume": 159068224
-        },
         {
           "date": "2026-08-07",
           "open": 60.939998626708984,
@@ -37581,6 +37589,14 @@
           "low": 42.56999969482422,
           "close": 45.25,
           "volume": 150046011
+        },
+        {
+          "date": "2026-11-06",
+          "open": 42,
+          "high": 44.869998931884766,
+          "low": 42,
+          "close": 43.95000076293945,
+          "volume": 92040898
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -37595,22 +37611,14 @@
       "region": "中国大陆",
       "linkNode": "optical",
       "yahoo": "300308.SZ",
-      "price": 493.33,
+      "price": 448,
       "previousClose": 955,
-      "change": -461.67,
-      "changePercent": -48.34,
+      "change": -507,
+      "changePercent": -53.09,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T07:04:10.000Z",
+      "marketTime": "2026-11-06T07:04:55.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 901.02001953125,
-          "high": 995,
-          "low": 882.5499877929688,
-          "close": 955,
-          "volume": 42295059
-        },
         {
           "date": "2026-08-07",
           "open": 981.0900268554688,
@@ -38082,6 +38090,14 @@
           "low": 475.1000061035156,
           "close": 493.3299865722656,
           "volume": 62455300
+        },
+        {
+          "date": "2026-11-06",
+          "open": 433.5,
+          "high": 463.3299865722656,
+          "low": 427.3399963378906,
+          "close": 448,
+          "volume": 54110132
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -38096,22 +38112,14 @@
       "region": "中国大陆",
       "linkNode": "optical",
       "yahoo": "300502.SZ",
-      "price": 185.61,
+      "price": 172.1,
       "previousClose": 421.87,
-      "change": -236.26,
-      "changePercent": -56,
+      "change": -249.77,
+      "changePercent": -59.21,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T07:04:31.000Z",
+      "marketTime": "2026-11-06T07:04:43.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 413,
-          "high": 439.8399963378906,
-          "low": 397.0899963378906,
-          "close": 421.8699951171875,
-          "volume": 51445777
-        },
         {
           "date": "2026-08-07",
           "open": 430.3399963378906,
@@ -38583,6 +38591,14 @@
           "low": 177.63999938964844,
           "close": 185.61000061035156,
           "volume": 117857611
+        },
+        {
+          "date": "2026-11-06",
+          "open": 166,
+          "high": 178,
+          "low": 161.16000366210938,
+          "close": 172.10000610351562,
+          "volume": 90448902
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -38597,22 +38613,14 @@
       "region": "中国大陆",
       "linkNode": "module",
       "yahoo": "002463.SZ",
-      "price": 81,
+      "price": 73.21,
       "previousClose": 117.2,
-      "change": -36.2,
-      "changePercent": -30.89,
+      "change": -43.99,
+      "changePercent": -37.53,
       "currency": "CNY",
       "exchange": "SHZ",
-      "marketTime": "2026-11-05T07:04:39.000Z",
+      "marketTime": "2026-11-06T07:04:42.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 112.73999786376953,
-          "high": 121.87000274658203,
-          "low": 112.01000213623047,
-          "close": 117.19999694824219,
-          "volume": 58949114
-        },
         {
           "date": "2026-08-07",
           "open": 119.54000091552734,
@@ -39084,6 +39092,14 @@
           "low": 78.68000030517578,
           "close": 81,
           "volume": 104371551
+        },
+        {
+          "date": "2026-11-06",
+          "open": 72.91000366210938,
+          "high": 76.26000213623047,
+          "low": 72.91000366210938,
+          "close": 73.20999908447266,
+          "volume": 79213450
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -39098,22 +39114,14 @@
       "region": "中国大陆",
       "linkNode": "materials",
       "yahoo": "600703.SS",
-      "price": 9.54,
+      "price": 9.18,
       "previousClose": 13.71,
-      "change": -4.17,
-      "changePercent": -30.42,
+      "change": -4.53,
+      "changePercent": -33.04,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 13.140000343322754,
-          "high": 13.979999542236328,
-          "low": 13.109999656677246,
-          "close": 13.710000038146973,
-          "volume": 252712286
-        },
         {
           "date": "2026-08-07",
           "open": 13.819999694824219,
@@ -39585,6 +39593,14 @@
           "low": 9.1899995803833,
           "close": 9.539999961853027,
           "volume": 93740319
+        },
+        {
+          "date": "2026-11-06",
+          "open": 9.050000190734863,
+          "high": 9.34000015258789,
+          "low": 9.050000190734863,
+          "close": 9.180000305175781,
+          "volume": 66772952
         }
       ],
       "quoteSource": "Yahoo Finance chart",
@@ -39599,22 +39615,14 @@
       "region": "中国大陆",
       "linkNode": "wafer-foundry",
       "yahoo": "600460.SS",
-      "price": 24.56,
+      "price": 23.77,
       "previousClose": 31.16,
-      "change": -6.6,
-      "changePercent": -21.18,
+      "change": -7.39,
+      "changePercent": -23.72,
       "currency": "CNY",
       "exchange": "SHH",
-      "marketTime": "2026-11-05T07:00:00.000Z",
+      "marketTime": "2026-11-06T07:00:01.000Z",
       "history": [
-        {
-          "date": "2026-08-06",
-          "open": 29.899999618530273,
-          "high": 31.700000762939453,
-          "low": 29.799999237060547,
-          "close": 31.15999984741211,
-          "volume": 102278434
-        },
         {
           "date": "2026-08-07",
           "open": 31.100000381469727,
@@ -40086,6 +40094,14 @@
           "low": 23.559999465942383,
           "close": 24.559999465942383,
           "volume": 70715835
+        },
+        {
+          "date": "2026-11-06",
+          "open": 23.399999618530273,
+          "high": 24.239999771118164,
+          "low": 23.209999084472656,
+          "close": 23.770000457763672,
+          "volume": 45176806
         }
       ],
       "quoteSource": "Yahoo Finance chart",
